@@ -66,6 +66,11 @@ angular
 	            	}
 	            }
 	        })
+	        .state('menu4', {
+	        	templateUrl: 'views/quotes.html',
+	        	url : '/menu4',
+	        	controller : 'QuotesController'
+	        })
 	        .state('textEditor', {
 	            templateUrl: 'views/textEditor.html',
 	            url : '/textEditor',
@@ -152,10 +157,11 @@ angular
             })
             // tells angular-translate which of the registered languages is the one that should be used by default.
             .preferredLanguage('de')
-            .registerAvailableLanguageKeys(['en', 'de', 'fr'], {
+            .registerAvailableLanguageKeys(['en', 'de', 'fr', 'ro'], {
                 'en_*': 'en',
                 'de_*': 'de',
-                'fr_*': 'fr'
+                'fr_*': 'fr',
+                'ro_*': 'ro'
             })
             // This method tries to determine by itself what the preferred language would be.
             .determinePreferredLanguage()

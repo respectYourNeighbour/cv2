@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
     <head>
         <meta charset="UTF-8">
-        <title>Starter Node and Angular</title>
+        <title>Luca Filip</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <base href="/">
@@ -25,48 +25,96 @@
     <body ng-app="sampleApp" ng-controller="MainController">
 
 
-        <div class="container">
-            <nav class="navbar navbar-inverse">
-                <div class="navbar-header">
-                    <a class="navbar-brand" ui-sref="/">Home</a>
-                </div>
+        <div class="container-fluid">
 
-                <!-- Link to our pages. Angular handles the routing here. -->
-                <ul class="nav navbar-nav navbar">
-                    <li><a ui-sref="menu1">Menu 1</a></li>
-                    <li><a ui-sref="pagination">Pagination</a></li>
-                    <li><a ui-sref="textEditor">Text Editor</a></li>
-                    <li><a ui-sref="messages.list" ng-if="isAuthenticated()">Messages</a></li>
-                    <li><a ui-sref="contact">Contact</a></li>
-                    <li class="dropdown">
-                        <a id="drop2" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" data-target="#" href="#">
-                            Connect <span class="caret"></span>
+            <nav class="navbar-fixed-left navbar-minimal animate" role="navigation">
+                <div class="navbar-toggler animate">
+                    <span class="menu-icon"></span>
+                </div>
+                <ul class="navbar-menu animate">
+                    <li>
+                        <a ui-sref="menu1" class="animate">
+                            <span class="desc animate" translate="WHO_AM_I"></span>
+                            <span class="glyphicon glyphicon-info-sign"></span>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="drop2" ng-if="!isAuthenticated()">
-                            <li>
-                                <a ui-sref="login">Login</a>
-                            </li>
-                            <li class="divider" role="separator"></li>
-                            <li>
-                                <a ui-sref="signup">Sign up</a>
-                            </li>
-                        </ul>
-                        <ul class="dropdown-menu" aria-labelledby="drop2" ng-if="isAuthenticated()">
-                            <li>
-                                <a ui-sref="logout">Logout</a>
-                            </li>
-                            <li class="divider" role="separator"></li>
-                            <li>
-                                <a ui-sref="profile">Profile</a>
-                            </li>
-                        </ul>
+                    </li>
+                    <li>
+                        <a ui-sref="menu2" class="animate">
+                            <span class="desc animate" translate="GOOD_READ"></span>
+                            <span class="glyphicon glyphicon-file"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a ui-sref="menu3" class="animate">
+                            <span class="desc animate" translate="PORTOFOLIO"></span>
+                            <i class="fa fa-suitcase"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a ui-sref="menu4" class="animate">
+                            <span class="desc animate" translate="MY_QUOTES"></span>
+                            <i class="fa fa-quote-left"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a ui-sref="menu5" class="animate">
+                            <span class="desc animate" translate="CONTACT"></span>
+                            <i class="fa fa-envelope-o"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a ui-sref="pagination" class="animate">
+                            <span class="desc animate">Pagination</span>
+                            <i class="fa fa-envelope-o"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a ui-sref="textEditor" class="animate">
+                            <span class="desc animate">Text Editor</span>
+                            <i class="fa fa-envelope-o"></i>
+                        </a>
+                    </li>
+                    <li ng-if="isAuthenticated()">
+                        <a ui-sref="messages.list" class="animate">
+                            <span class="desc animate">Messages</span>
+                            <i class="fa fa-envelope-o"></i>
+                        </a>
+                    </li>
+                    <li ng-if="!isAuthenticated()">
+                        <a ui-sref="login" class="animate">
+                            <span class="desc animate">Login</span>
+                            <i class="fa fa-envelope-o"></i>
+                        </a>
+                    </li>
+                    <li ng-if="!isAuthenticated()">
+                        <a ui-sref="signup" class="animate">
+                            <span class="desc animate">Sign up</span>
+                            <i class="fa fa-envelope-o"></i>
+                        </a>
+                    </li>
+                    <li ng-if="isAuthenticated()">
+                        <a ui-sref="logout" class="animate">
+                            <span class="desc animate">Logout</span>
+                            <i class="fa fa-envelope-o"></i>
+                        </a>
+                    </li>
+                    <li ng-if="isAuthenticated()">
+                        <a ui-sref="profile" class="animate">
+                            <span class="desc animate">Profile</span>
+                            <i class="fa fa-envelope-o"></i>
+                        </a>
                     </li>
                 </ul>
             </nav>
 
-            <button ng-click="changeLanguage('de')" translate="BUTTON_LANG_DE"></button>
-            <button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
-            <button ng-click="changeLanguage('fr')" translate="BUTTON_LANG_FR"></button>
+            <div class="langWrapper">
+                <div class="lang">
+                    <button ng-click="changeLanguage('de')" class="btnLang paper-flatten" translate="BUTTON_LANG_DE"></button>
+                    <button ng-click="changeLanguage('en')" class="btnLang paper-flatten" translate="BUTTON_LANG_EN"></button>
+                    <button ng-click="changeLanguage('fr')" class="btnLang paper-flatten" translate="BUTTON_LANG_FR"></button>
+                    <button ng-click="changeLanguage('ro')" class="btnLang paper-flatten" translate="BUTTON_LANG_RO"></button>
+                </div>  
+            </div>
             <!-- Angular dynamic content -->
 
             <div ui-view></div>
@@ -169,6 +217,7 @@
         <!-- Logout Controller  --> <script src="scripts/controllers/LogoutCtrl.js"></script>
         <!-- Profile Controller --> <script src="scripts/controllers/ProfileCtrl.js"></script>
         <!-- Profile Controller --> <script src="scripts/controllers/MessageViewCtrl.js"></script>
+        <!-- Profile Controller --> <script src="scripts/controllers/QuotesCtrl.js"></script>
 
         <!-- Profile Controller --> <script src="scripts/controllers/admin/AdminLoginCtrl.js"></script>
 
@@ -182,6 +231,7 @@
         <!--  Contact Service   --> <script src="scripts/services/ContactService.js"></script>
         <!--  Content Service   --> <script src="scripts/services/ContentService.js"></script>
         <!--Text Editor Service --> <script src="scripts/services/TextEditorService.js"></script>
+        <!--Text Editor Service --> <script src="scripts/services/QuotesService.js"></script>
 
 
         <!--****************************

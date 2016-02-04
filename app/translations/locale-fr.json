@@ -1,12 +1,14 @@
 {
-    "HEADLINE": "Quelle belle Module!",
-    "PARAGRAPH": "Sérieusement!",
-    "PASSED_AS_TEXT": "Hey! Je a été remis comme un texte!",
-    "PASSED_AS_ATTRIBUTE": "Je a été remis comme un attribut, ou cool?",
-    "PASSED_AS_INTERPOLATION": "Les débutants! Je interpolée!",
-    "VARIABLE_REPLACEMENT": "Hi {{name}}",
-    "BUTTON_LANG_DE": "Allemand",
-    "BUTTON_LANG_EN": "Anglais",
-    "BUTTON_LANG_FR": "Français",
-    "EDITOR" : "Éditeur de texte"
+    "BUTTON_LANG_DE": "German",
+    "BUTTON_LANG_EN": "English",
+    "BUTTON_LANG_FR": "French",
+    "BUTTON_LANG_RO": "Roumain",
+    "PORTOFOLIO" : "Portofolio",
+    "GOOD_READ" : "Bonne lecture",
+    "WHO_AM_I" : "Qui suis je",
+    "MY_QUOTES" : "Mes citations",
+    "CONTACT" : "Contact",
+    "WELCOME" : "Salut",
+    "ABOUT_ME_TITLE" : "Quelques mots sur moi",
+    "PAGE_QUOTES" : "Citations"
 }

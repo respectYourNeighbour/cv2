@@ -8,6 +8,8 @@
 angular
 	.module('Admin', [])
 	.config(function ($stateProvider, $translateProvider, $urlRouterProvider) {
+		
+		/* jshint ignore:start */
 		function skipIfLoggedIn($q, $auth) {
       		var deferred = $q.defer();
       		if ($auth.isAuthenticated()) {
@@ -18,6 +20,7 @@ angular
       		}
       		return deferred.promise;
     	}
+    	
 
 	    function loginRequired($q, $location, $auth) {
 	      	var deferred = $q.defer();
@@ -29,6 +32,7 @@ angular
 	      	}
 	      	return deferred.promise;
 	    }
+	    /* jshint ignore:end */
 
         $stateProvider
 	        .state('admin', {
