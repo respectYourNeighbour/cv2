@@ -1,0 +1,25 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "font-awesome/scss/font-awesome.scss";
+// endbower
+@import "_colors.scss";
+@import "loading.scss";
+
+/*
+|--------------------------------------------------------------------------
+| General rules
+|--------------------------------------------------------------------------
+*/
+
+/* Space out content a bit */
+body {
+  	padding-top: 20px;
+  	padding-bottom: 20px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Own style
+|--------------------------------------------------------------------------
+*/

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="UTF-8">
+        <title>Starter Node and Angular</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <base href="/">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css(.) styles/vendor.css -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.css" />
+        <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+        <link rel="stylesheet" href="bower_components/textAngular/dist/textAngular.css" />
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+    </head>
+
+
+    <body ng-app="sampleApp" ng-controller="MainController">
+
+
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                <div class="navbar-header">
+                    <a class="navbar-brand" ui-sref="/">Home</a>
+                </div>
+
+                <!-- Link to our pages. Angular handles the routing here. -->
+                <ul class="nav navbar-nav navbar">
+                    <li><a ui-sref="menu1">Menu 1</a></li>
+                    <li><a ui-sref="pagination">Pagination</a></li>
+                    <li><a ui-sref="textEditor">Text Editor</a></li>
+                    <li><a ui-sref="messages.list" ng-if="isAuthenticated()">Messages</a></li>
+                    <li><a ui-sref="contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a id="drop2" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" data-target="#" href="#">
+                            Connect <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="drop2" ng-if="!isAuthenticated()">
+                            <li>
+                                <a ui-sref="login">Login</a>
+                            </li>
+                            <li class="divider" role="separator"></li>
+                            <li>
+                                <a ui-sref="signup">Sign up</a>
+                            </li>
+                        </ul>
+                        <ul class="dropdown-menu" aria-labelledby="drop2" ng-if="isAuthenticated()">
+                            <li>
+                                <a ui-sref="logout">Logout</a>
+                            </li>
+                            <li class="divider" role="separator"></li>
+                            <li>
+                                <a ui-sref="profile">Profile</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <button ng-click="changeLanguage('de')" translate="BUTTON_LANG_DE"></button>
+            <button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
+            <button ng-click="changeLanguage('fr')" translate="BUTTON_LANG_FR"></button>
+            <!-- Angular dynamic content -->
+
+            <div ui-view></div>
+        </div>
+
+        <div class="m-app-loading" ng-animate-children>
+            <!-- BEGIN: Actual animated container. -->
+            <div class="animated-container">
+                <div class="messaging">
+
+                    <h1>
+                        App is Loading
+                    </h1>
+
+                    <p>
+                        Please stand by for your ticket to awesome-town!
+                    </p>
+
+                </div>
+        </div>
+        <!-- END: Actual animated container. -->
+
+    </div>
+    <!-- END: App-Loading Screen. -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-XXXXX-X');
+            ga('send', 'pageview');
+        </script>
+
+        <!-- build:js(.) scripts/oldieshim.js -->
+        <!--[if lt IE 9]>
+        <script src="bower_components/es5-shim/es5-shim.js"></script>
+        <script src="bower_components/json3/lib/json3.js"></script>
+        <![endif]-->
+        <!-- endbuild -->
+
+        <!-- build:js(.) scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/json3/lib/json3.min.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-touch/angular-touch.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-translate/angular-translate.js"></script>
+        <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+        <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+        <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/angular-busy/dist/angular-busy.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/satellizer/satellizer.js"></script>
+        <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+        <script src="bower_components/rangy/rangy-core.js"></script>
+        <script src="bower_components/rangy/rangy-classapplier.js"></script>
+        <script src="bower_components/rangy/rangy-highlighter.js"></script>
+        <script src="bower_components/rangy/rangy-selectionsaverestore.js"></script>
+        <script src="bower_components/rangy/rangy-serializer.js"></script>
+        <script src="bower_components/rangy/rangy-textrange.js"></script>
+        <script src="bower_components/textAngular/dist/textAngular.js"></script>
+        <script src="bower_components/textAngular/dist/textAngular-sanitize.js"></script>
+        <script src="bower_components/textAngular/dist/textAngularSetup.js"></script>
+        <script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <!--***********************
+        ******* TEMPLATES JS ******
+        *************************** -->
+        <!--     Templates      --> <script src="templates.js"></script>
+
+        <!--***********************
+        ******* ANGULAR APP *******
+        *************************** -->
+        <!--      App JS        --> <script src="scripts/app.js"></script>
+
+        <!--*******************************
+        ******* ANGULAR CONTROLLERS *******
+        *********************************** -->
+        <!-- Home  Controller   --> <script src="scripts/controllers/MainCtrl.js"></script>
+        <!-- Home  Controller   --> <script src="scripts/controllers/HomeCtrl.js"></script>
+        <!-- Menu 1 Controller  --> <script src="scripts/controllers/Menu1Ctrl.js"></script>
+        <!-- Menu 2 Controller  --> <script src="scripts/controllers/PaginationCtrl.js"></script>
+        <!-- Menu 3 Controller  --> <script src="scripts/controllers/TextEditorCtrl.js"></script>
+        <!-- Menu 4 Controller  --> <script src="scripts/controllers/MessagesCtrl.js"></script>
+        <!-- Menu 5 Controller  --> <script src="scripts/controllers/ContactCtrl.js"></script>
+        <!-- Login Controller   --> <script src="scripts/controllers/LoginCtrl.js"></script>
+        <!-- Signup Controller  --> <script src="scripts/controllers/SignupCtrl.js"></script>
+        <!-- Logout Controller  --> <script src="scripts/controllers/LogoutCtrl.js"></script>
+        <!-- Profile Controller --> <script src="scripts/controllers/ProfileCtrl.js"></script>
+        <!-- Profile Controller --> <script src="scripts/controllers/MessageViewCtrl.js"></script>
+
+        <!-- Profile Controller --> <script src="scripts/controllers/admin/AdminLoginCtrl.js"></script>
+
+
+
+        <!--****************************
+        ******* ANGULAR SERVICES *******
+        ******************************** -->
+        <!--  Suedeza Service   --> <script src="scripts/services/HomeService.js"></script>
+        <!--  Auth Service      --> <script src="scripts/services/AuthenticationService.js"></script>
+        <!--  Contact Service   --> <script src="scripts/services/ContactService.js"></script>
+        <!--  Content Service   --> <script src="scripts/services/ContentService.js"></script>
+        <!--Text Editor Service --> <script src="scripts/services/TextEditorService.js"></script>
+
+
+        <!--****************************
+        ****** ANGULAR DIRECTIVES ******
+        ******************************** -->
+        <!--  Suedeza Service   --> <script src="scripts/directives/firstLoad.js"></script>
+
+        <!-- endbuild -->
+    </body>
+</html>
