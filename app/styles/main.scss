@@ -33,7 +33,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body{
 	-webkit-font-smoothing: antialiased;
-  background: url('patterns/pattern47.png');
+  background: url('patterns/pattern59.png');
 }
 .noselect {
   	-webkit-touch-callout: none;
@@ -58,6 +58,11 @@ body{
      		10px 0px 15px -5px rgba(0, 0, 0, 0.15),
     		-10px 0px 15px -5px rgba(0, 0, 0, 0.15);
 	}
+  hr{
+    margin-top:  7em;
+    margin-bottom: 7em;
+    border-top: 1px solid #E8EAED;
+  }
 	.aboutMeTitle {
 		font-family: font4;
 		font-size: 2.3em;
@@ -138,7 +143,6 @@ Main components
 }
 @media only screen and (min-width: 1170px) {
  	#cd-timeline {
-    	margin-top: 10em;
     	margin-bottom: 3em;
   	}
   	#cd-timeline::before {

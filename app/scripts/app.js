@@ -47,9 +47,9 @@ angular
 	            templateUrl: 'views/home.html',
 	            controller: 'HomeController'
 	        })
-	        .state('menu1', {
-	            templateUrl: 'views/menu1.html',
-	            url : '/menu1',
+	        .state('about', {
+	            templateUrl: 'views/aboutMe.html',
+	            url : '/about',
 	            controller: 'Menu1Controller'
 	        })
 	        .state('pagination', {

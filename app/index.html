@@ -33,15 +33,15 @@
                 </div>
                 <ul class="navbar-menu animate">
                     <li>
-                        <a ui-sref="menu1" class="animate">
+                        <a ui-sref="about" class="animate">
                             <span class="desc animate" translate="WHO_AM_I"></span>
-                            <span class="glyphicon glyphicon-info-sign"></span>
+                            <i class="fa fa-user"></i>
                         </a>
                     </li>
                     <li>
                         <a ui-sref="menu2" class="animate">
                             <span class="desc animate" translate="GOOD_READ"></span>
-                            <span class="glyphicon glyphicon-file"></span>
+                            <i class="fa fa-book"></i>
                         </a>
                     </li>
                     <li>
@@ -71,7 +71,7 @@
                     <li>
                         <a ui-sref="textEditor" class="animate">
                             <span class="desc animate">Text Editor</span>
-                            <i class="fa fa-envelope-o"></i>
+                            <i class="fa fa-font"></i>
                         </a>
                     </li>
                     <li ng-if="isAuthenticated()">
@@ -83,7 +83,7 @@
                     <li ng-if="!isAuthenticated()">
                         <a ui-sref="login" class="animate">
                             <span class="desc animate">Login</span>
-                            <i class="fa fa-envelope-o"></i>
+                            <i class="fa fa-sign-in"></i>
                         </a>
                     </li>
                     <li ng-if="!isAuthenticated()">
