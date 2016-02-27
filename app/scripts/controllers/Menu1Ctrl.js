@@ -12,8 +12,8 @@
         // when landing on the page, get all todos and show them
         // use the service to get all the entries
         $scope.myPromise = HomeService.get()
-            .success(function(data) {
-                console.dir(data);
+            .success(function() {
+                console.dir();
         });
     }
 

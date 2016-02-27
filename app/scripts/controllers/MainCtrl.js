@@ -36,7 +36,9 @@
         });
 
         //google analytics
-        $window.ga('send', 'pageview', { page: $location.url() });
+        $scope.$on('$viewContentLoaded', function() {
+            $window.ga('send', 'pageview', { page: $location.url() });
+        });
     }
 
     angular
