@@ -10,12 +10,13 @@ var MongoClient    = require('mongodb').MongoClient; //This is the MongoDB Drive
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose       = require('mongoose');
+var compression 	= require('compression');
 
 
 /********************************************
 *************** Configuration ***************
 ********************************************* */
-var port = process.env.PORT || 8080; // We set the port on which our application will run.
+var port = process.env.PORT || 3000; // We set the port on which our application will run.
 
 mongoose.connect('mongodb://127.0.0.1/NMAstarterkit');
 var db = mongoose.connection;
@@ -31,6 +32,9 @@ db.on('connected', function () {
 	app.use(bodyParser.json()); // parse application/json ;
 	app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 	app.use(bodyParser.urlencoded({ extended: true })); // parse application/x-www-form-urlencoded
+
+	// compress all requests
+	app.use(compression());
 
 	app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
 	app.use(express.static(__dirname + '/dist')); //We set the static files location '/app'

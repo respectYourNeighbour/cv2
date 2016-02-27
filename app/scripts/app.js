@@ -52,6 +52,11 @@ angular
 	            url : '/about',
 	            controller: 'Menu1Controller'
 	        })
+	        .state('articles', {
+	            templateUrl: 'views/articles.html',
+	            url : '/articles',
+	            controller: 'ArticleController'
+	        })
 	        .state('pagination', {
 	            templateUrl: 'views/pagination.html',
 	            url : '/pagination',

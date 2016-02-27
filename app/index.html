@@ -39,7 +39,7 @@
                         </a>
                     </li>
                     <li>
-                        <a ui-sref="menu2" class="animate">
+                        <a ui-sref="articles" class="animate">
                             <span class="desc animate" translate="GOOD_READ"></span>
                             <i class="fa fa-book"></i>
                         </a>
@@ -123,21 +123,15 @@
         <div class="m-app-loading" ng-animate-children>
             <!-- BEGIN: Actual animated container. -->
             <div class="animated-container">
-                <div class="messaging">
-
-                    <h1>
-                        App is Loading
-                    </h1>
-
-                    <p>
-                        Please stand by for your ticket to awesome-town!
-                    </p>
-
-                </div>
+                
+                <section class="loaders">
+                    <span class="loaderWrapper">
+                        <span class="loader loader-quart"></span>  Loading...
+                    </span>
+                </section>
+            </div>
+            <!-- END: Actual animated container. -->
         </div>
-        <!-- END: Actual animated container. -->
-
-    </div>
     <!-- END: App-Loading Screen. -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -206,6 +200,7 @@
         ******* ANGULAR CONTROLLERS *******
         *********************************** -->
         <!-- Home  Controller   --> <script src="scripts/controllers/MainCtrl.js"></script>
+        <!-- Home  Controller   --> <script src="scripts/controllers/ArticleCtrl.js"></script>
         <!-- Home  Controller   --> <script src="scripts/controllers/HomeCtrl.js"></script>
         <!-- Menu 1 Controller  --> <script src="scripts/controllers/Menu1Ctrl.js"></script>
         <!-- Menu 2 Controller  --> <script src="scripts/controllers/PaginationCtrl.js"></script>

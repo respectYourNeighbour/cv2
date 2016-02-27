@@ -8,6 +8,7 @@
 |--------------------------------------------------------------------------
 */
 @import "_fonts.scss";
+@import "_loadingScreen.scss";
 @import "_colors.scss";
 @import "_article.scss";
 @import "_buttons.scss";
@@ -31,9 +32,12 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 |--------------------------------------------------------------------------
 */
 
+body, html{
+  height: 100%;
+}
 body{
 	-webkit-font-smoothing: antialiased;
-  background: url('patterns/pattern59.png');
+  background: url('../images/patterns/pattern59.png');
 }
 .noselect {
   	-webkit-touch-callout: none;
