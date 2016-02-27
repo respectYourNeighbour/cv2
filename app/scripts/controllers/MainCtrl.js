@@ -5,7 +5,7 @@
 (function() {
     'use strict';
 
-    function mainCtrl($scope, $translate, AuthenticationService) {
+    function mainCtrl($scope, $translate, AuthenticationService, $location, $window) {
         console.log('Main Controller');
         $scope.message = 'hi!';
 
@@ -34,10 +34,13 @@
             event.preventDefault();
             $(this).closest('.navbar-minimal').toggleClass('open');
         });
+
+        //google analytics
+        $window.ga('send', 'pageview', { page: $location.url() });
     }
 
     angular
         .module('sampleApp')
-        .controller('MainController',  ['$scope', '$translate', 'AuthenticationService', mainCtrl]);
+        .controller('MainController',  ['$scope', '$translate', 'AuthenticationService', '$location', '$window', mainCtrl]);
 
 }());
