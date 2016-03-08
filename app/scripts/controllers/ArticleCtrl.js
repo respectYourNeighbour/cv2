@@ -12,6 +12,7 @@
 
         ArticlesService.getArticles().success(function(data){
         	console.log('articles found', data);
+        	$scope.articles = data;
         });
     }
 
