@@ -57,29 +57,13 @@ angular
 	            url : '/articles',
 	            controller: 'ArticleController'
 	        })
-	        .state('pagination', {
-	            templateUrl: 'views/pagination.html',
-	            url : '/pagination',
-	            controller: 'PaginationController',
-	            resolve : {
-	            	itemCount : function(ContentService) {
-	            		console.log('itemCount');
-	            		return ContentService.getPaginationItemCount();
-	            	},
-	            	items : function(ContentService) {
-	            		return ContentService.getItems(5,1);
-	            	}
-	            }
-	        })
-	        .state('menu4', {
-	        	templateUrl: 'views/quotes.html',
-	        	url : '/menu4',
-	        	controller : 'QuotesController'
-	        })
 	        .state('textEditor', {
 	            templateUrl: 'views/textEditor.html',
 	            url : '/textEditor',
-	            controller: 'TextEditorController'
+	            controller: 'TextEditorController',
+	            resolve: {
+		        	loginRequired: loginRequired
+		        }
 	        })
 	        .state('messages', {
 		        abstract: true,

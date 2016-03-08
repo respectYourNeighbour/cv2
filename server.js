@@ -16,7 +16,7 @@ var compression 	= require('compression');
 /********************************************
 *************** Configuration ***************
 ********************************************* */
-var port = process.env.PORT || 3000; // We set the port on which our application will run.
+var port = process.env.PORT || 8080; // We set the port on which our application will run.
 
 mongoose.connect('mongodb://127.0.0.1/NMAstarterkit');
 var db = mongoose.connection;

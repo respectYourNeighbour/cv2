@@ -19,11 +19,52 @@
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
+
+        <style>
+            /*Critical css*/
+            div.m-app-loading {
+                position: fixed;
+                z-index: 9999;
+            }
+            div.animated-container {
+                background-color: #333333 ;
+                bottom: 0px ;
+                left: 0px ;
+                opacity: 1.0 ;
+                position: fixed ;
+                right: 0px ;
+                top: 0px ;
+                z-index: 999999 ;
+            }
+            /* Used to initialize the ng-leave animation state. */
+            div.animated-container.ng-leave {
+                opacity: 1.0 ;
+                transition: all linear 500ms ;
+                    -webkit-transition: all linear 500ms ;
+            }
+            /* Used to set the end properties of the ng-leave animation state. */
+            div.animated-container.ng-leave-active {
+                opacity: 0 ;
+            }
+        </style>
     </head>
 
 
     <body ng-app="sampleApp" ng-controller="MainController">
 
+        <div class="m-app-loading" ng-animate-children>
+            <!-- BEGIN: Actual animated container. -->
+            <div class="animated-container">
+                
+                <section class="loaders">
+                    <span class="loaderWrapper">
+                        <span class="loader loader-quart"></span>  Loading...
+                    </span>
+                </section>
+            </div>
+            <!-- END: Actual animated container. -->
+        </div>
+        <!-- END: App-Loading Screen. -->
 
         <div class="container-fluid">
 
@@ -35,7 +76,7 @@
                     <li>
                         <a ui-sref="about" class="animate">
                             <span class="desc animate" translate="WHO_AM_I"></span>
-                            <i class="fa fa-user"></i>
+                            <i class="fa fa-file-text-o"></i>
                         </a>
                     </li>
                     <li>
@@ -51,24 +92,12 @@
                         </a>
                     </li>
                     <li>
-                        <a ui-sref="menu4" class="animate">
-                            <span class="desc animate" translate="MY_QUOTES"></span>
-                            <i class="fa fa-quote-left"></i>
-                        </a>
-                    </li>
-                    <li>
                         <a ui-sref="menu5" class="animate">
                             <span class="desc animate" translate="CONTACT"></span>
                             <i class="fa fa-envelope-o"></i>
                         </a>
                     </li>
-                    <li>
-                        <a ui-sref="pagination" class="animate">
-                            <span class="desc animate">Pagination</span>
-                            <i class="fa fa-envelope-o"></i>
-                        </a>
-                    </li>
-                    <li>
+                    <li ng-if="isAuthenticated()">
                         <a ui-sref="textEditor" class="animate">
                             <span class="desc animate">Text Editor</span>
                             <i class="fa fa-font"></i>
@@ -95,13 +124,13 @@
                     <li ng-if="isAuthenticated()">
                         <a ui-sref="logout" class="animate">
                             <span class="desc animate">Logout</span>
-                            <i class="fa fa-envelope-o"></i>
+                            <i class="fa fa-sign-out"></i>
                         </a>
                     </li>
                     <li ng-if="isAuthenticated()">
                         <a ui-sref="profile" class="animate">
                             <span class="desc animate">Profile</span>
-                            <i class="fa fa-envelope-o"></i>
+                            <i class="fa fa-user"></i>
                         </a>
                     </li>
                 </ul>
@@ -119,20 +148,6 @@
 
             <div ui-view></div>
         </div>
-
-        <div class="m-app-loading" ng-animate-children>
-            <!-- BEGIN: Actual animated container. -->
-            <div class="animated-container">
-                
-                <section class="loaders">
-                    <span class="loaderWrapper">
-                        <span class="loader loader-quart"></span>  Loading...
-                    </span>
-                </section>
-            </div>
-            <!-- END: Actual animated container. -->
-        </div>
-    <!-- END: App-Loading Screen. -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
         <script>
@@ -203,7 +218,6 @@
         <!-- Home  Controller   --> <script src="scripts/controllers/ArticleCtrl.js"></script>
         <!-- Home  Controller   --> <script src="scripts/controllers/HomeCtrl.js"></script>
         <!-- Menu 1 Controller  --> <script src="scripts/controllers/Menu1Ctrl.js"></script>
-        <!-- Menu 2 Controller  --> <script src="scripts/controllers/PaginationCtrl.js"></script>
         <!-- Menu 3 Controller  --> <script src="scripts/controllers/TextEditorCtrl.js"></script>
         <!-- Menu 4 Controller  --> <script src="scripts/controllers/MessagesCtrl.js"></script>
         <!-- Menu 5 Controller  --> <script src="scripts/controllers/ContactCtrl.js"></script>
@@ -212,8 +226,6 @@
         <!-- Logout Controller  --> <script src="scripts/controllers/LogoutCtrl.js"></script>
         <!-- Profile Controller --> <script src="scripts/controllers/ProfileCtrl.js"></script>
         <!-- Profile Controller --> <script src="scripts/controllers/MessageViewCtrl.js"></script>
-        <!-- Profile Controller --> <script src="scripts/controllers/QuotesCtrl.js"></script>
-
         <!-- Profile Controller --> <script src="scripts/controllers/admin/AdminLoginCtrl.js"></script>
 
 
@@ -226,13 +238,13 @@
         <!--  Contact Service   --> <script src="scripts/services/ContactService.js"></script>
         <!--  Content Service   --> <script src="scripts/services/ContentService.js"></script>
         <!--Text Editor Service --> <script src="scripts/services/TextEditorService.js"></script>
-        <!--Text Editor Service --> <script src="scripts/services/QuotesService.js"></script>
+        <!--Articles Service --> <script src="scripts/services/ArticlesService.js"></script>
 
 
         <!--****************************
         ****** ANGULAR DIRECTIVES ******
         ******************************** -->
-        <!--  Suedeza Service   --> <script src="scripts/directives/firstLoad.js"></script>
+        <!--  First Load   --> <script src="scripts/directives/firstLoad.js"></script>
 
         <!-- endbuild -->
     </body>

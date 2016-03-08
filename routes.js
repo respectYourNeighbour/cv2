@@ -14,7 +14,7 @@ module.exports = function(app, db) {
 	|--------------------------------------------------------------------------
 	*/
 	var posts = db.collection("NMAstarterkit");
-
+	var articles = db.collection("articles");
 
 	/*
 	|--------------------------------------------------------------------------
@@ -194,6 +194,27 @@ module.exports = function(app, db) {
 
         });
     });
+
+
+    /*
+	 |--------------------------------------------------------------------------
+	 | GET ARTICLES
+	 |--------------------------------------------------------------------------
+	 */
+	app.get('/api/getArticles', function(req, res) {
+		console.log('routes get articles');
+		// use mongoDB Driver to get all bancs in the database;
+		articles.find().toArray(function(err, items) {
+			"use strict";
+
+			if (err) throw err;
+
+			console.log("Found " + items.length + " articles");
+
+			res.json(items);
+
+		});
+	});
 
 
 	/*
