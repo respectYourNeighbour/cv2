@@ -44,19 +44,29 @@ angular
         $stateProvider
             // home page
 	        .state('/', {
-	            templateUrl: 'views/home.html',
-	            controller: 'HomeController'
+	            templateUrl: 'views/home.html'
 	        })
 	        .state('about', {
 	            templateUrl: 'views/aboutMe.html',
 	            url : '/about',
-	            controller: 'Menu1Controller'
+	            controller: 'AboutMeController'
 	        })
 	        .state('articles', {
 	            templateUrl: 'views/articles.html',
 	            url : '/articles',
 	            controller: 'ArticleController'
 	        })
+	        .state('view', {
+	        	url: '/:articleId',
+	        	templateUrl: 'views/articleDetail.html',
+	        	controller: 'ArticleDetailController',
+	        	resolve: {
+	        		myFunc: function($stateParams) {
+	        			console.log('params: ', $stateParams);
+	        			return;
+	        		}
+	        	}
+	      	})
 	        .state('textEditor', {
 	            templateUrl: 'views/textEditor.html',
 	            url : '/textEditor',

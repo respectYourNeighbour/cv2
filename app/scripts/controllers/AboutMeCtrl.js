@@ -19,5 +19,5 @@
 
     angular
         .module('sampleApp')
-        .controller('Menu1Controller', ['$scope', 'HomeService', menu1Ctrl]);
+        .controller('AboutMeController', ['$scope', 'HomeService', menu1Ctrl]);
 }());

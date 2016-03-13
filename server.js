@@ -12,6 +12,9 @@ var methodOverride = require('method-override');
 var mongoose       = require('mongoose');
 var compression 	= require('compression');
 
+var oneDay = 86400000;
+var sevenDay = 604800000;
+
 
 /********************************************
 *************** Configuration ***************
@@ -37,7 +40,7 @@ db.on('connected', function () {
 	app.use(compression());
 
 	app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
-	app.use(express.static(__dirname + '/dist')); //We set the static files location '/app'
+	app.use(express.static(__dirname + '/dist', { maxAge: sevenDay })); //We set the static files location '/app'
 
 	// routes ==================================================
 

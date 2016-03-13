@@ -380,7 +380,18 @@ module.exports = function(app, db) {
 	 |--------------------------------------------------------------------------
 	 */
 	app.post('/api/sendText', function(req, res) {
-		console.log("req.body: ",req.text.text)
+		console.log("req.body: ", req.body)
+		var article = req.body;
+
+		articles.insert(article, function(error, inserted){
+			if(error){
+				console.log(error.message)
+				return db.close();
+			}
+			res.json(inserted);
+			console.dir("Successfully inserted article: "+ JSON.stringify(inserted));
+			//JSON.stringify is to actually get the json representation of this JavaScript object.
+		});
 	});
 
 

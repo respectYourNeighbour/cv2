@@ -1,18 +1,24 @@
-/****************************
+/*********************************
  ***** TextEditor Controller *****
- ****************************/
+ *********************************/
 
 (function() {
     'use strict';
 
     function textEditorCtrl($scope, TextEditorService) {
-        console.log('TextEditor  Controller');
+        console.log('TextEditor  Controller', $scope.htmlcontent);
         $scope.message = 'hi!';
 
-        $scope.text = {'text' : 'etc'};
+        
 
         $scope.save = function() {
-	        console.log('text'+ $scope.htmlcontenttwo);
+            $scope.text = {
+                'body' : $scope.htmlcontenttwo,
+                'title': 'manually inserted',
+                'category': 'manual',
+                'author': 'Me'
+            };
+
 	        TextEditorService.sendText($scope.text).success(function(data) {
 	        	console.log('recieve success in ctl'+data);
 	        });
