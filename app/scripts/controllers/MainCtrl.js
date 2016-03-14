@@ -9,7 +9,8 @@
         console.log('Main Controller');
         $scope.message = 'hi!';
 
-        $scope.changeLanguage = function (langKey) {
+        $scope.changeLanguage = function (langKey, event) {
+            event.preventDefault();
             console.log('changeLanguage');
             $translate.use(langKey);
         };

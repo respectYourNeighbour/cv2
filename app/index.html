@@ -40,85 +40,72 @@
 
         <div class="container-fluid">
 
-            <nav class="navbar-fixed-left navbar-minimal animate" role="navigation">
-                <div class="navbar-toggler animate">
-                    <span class="menu-icon"></span>
+            <!-- Navigation -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a ui-sref="about" translate="WHO_AM_I"></a>
+                            </li>
+                            <li>
+                                <a ui-sref="articles" translate="GOOD_READ"></a>
+                            </li>
+                            <li>
+                                <a ui-sref="menu3" translate="PORTOFOLIO"></a>
+                            </li>
+                            <li>
+                                <a ui-sref="menu5" translate="CONTACT"></a>
+                            </li>
+                            <li ng-if="isAuthenticated()">
+                                <a ui-sref="textEditor">Text Editor</a>
+                            </li>
+                            <li ng-if="isAuthenticated()">
+                                <a ui-sref="messages.list">Messages</a>
+                            </li>
+                            <li ng-if="!isAuthenticated()">
+                                <a ui-sref="login">Login</a>
+                            </li>
+                            <li ng-if="!isAuthenticated()">
+                                <a ui-sref="signup">Sign up</a>
+                            </li>
+                            <li ng-if="isAuthenticated()">
+                                <a ui-sref="logout">Logout</a>
+                            </li>
+                            <li ng-if="isAuthenticated()">
+                                <a ui-sref="profile">Profile</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Language <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" ng-click="changeLanguage('de', $event)" translate="BUTTON_LANG_DE"></a></li>
+                                    <li><a href="#" ng-click="changeLanguage('en', $event)" translate="BUTTON_LANG_EN"></a></li>
+                                    <li><a href="#" ng-click="changeLanguage('fr', $event)" translate="BUTTON_LANG_FR"></a></li>
+                                    <li><a href="#" ng-click="changeLanguage('ro', $event)" translate="BUTTON_LANG_RO"></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
                 </div>
-                <ul class="navbar-menu animate">
-                    <li>
-                        <a ui-sref="about" class="animate">
-                            <span class="desc animate" translate="WHO_AM_I"></span>
-                            <i class="fa fa-file-text-o"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a ui-sref="articles" class="animate">
-                            <span class="desc animate" translate="GOOD_READ"></span>
-                            <i class="fa fa-book"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a ui-sref="menu3" class="animate">
-                            <span class="desc animate" translate="PORTOFOLIO"></span>
-                            <i class="fa fa-suitcase"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a ui-sref="menu5" class="animate">
-                            <span class="desc animate" translate="CONTACT"></span>
-                            <i class="fa fa-envelope-o"></i>
-                        </a>
-                    </li>
-                    <li ng-if="isAuthenticated()">
-                        <a ui-sref="textEditor" class="animate">
-                            <span class="desc animate">Text Editor</span>
-                            <i class="fa fa-font"></i>
-                        </a>
-                    </li>
-                    <li ng-if="isAuthenticated()">
-                        <a ui-sref="messages.list" class="animate">
-                            <span class="desc animate">Messages</span>
-                            <i class="fa fa-envelope-o"></i>
-                        </a>
-                    </li>
-                    <li ng-if="!isAuthenticated()">
-                        <a ui-sref="login" class="animate">
-                            <span class="desc animate">Login</span>
-                            <i class="fa fa-sign-in"></i>
-                        </a>
-                    </li>
-                    <li ng-if="!isAuthenticated()">
-                        <a ui-sref="signup" class="animate">
-                            <span class="desc animate">Sign up</span>
-                            <i class="fa fa-envelope-o"></i>
-                        </a>
-                    </li>
-                    <li ng-if="isAuthenticated()">
-                        <a ui-sref="logout" class="animate">
-                            <span class="desc animate">Logout</span>
-                            <i class="fa fa-sign-out"></i>
-                        </a>
-                    </li>
-                    <li ng-if="isAuthenticated()">
-                        <a ui-sref="profile" class="animate">
-                            <span class="desc animate">Profile</span>
-                            <i class="fa fa-user"></i>
-                        </a>
-                    </li>
-                </ul>
+                <!-- /.container -->
             </nav>
-
-            <div class="langWrapper">
-                <div class="lang">
-                    <button ng-click="changeLanguage('de')" class="btnLang paper-flatten" translate="BUTTON_LANG_DE"></button>
-                    <button ng-click="changeLanguage('en')" class="btnLang paper-flatten" translate="BUTTON_LANG_EN"></button>
-                    <button ng-click="changeLanguage('fr')" class="btnLang paper-flatten" translate="BUTTON_LANG_FR"></button>
-                    <button ng-click="changeLanguage('ro')" class="btnLang paper-flatten" translate="BUTTON_LANG_RO"></button>
-                </div>  
+            
+            <div class="container-fluid" style="margin-top: 50px;">
+                <div ui-view></div>
             </div>
-            <!-- Angular dynamic content -->
-
-            <div ui-view></div>
         </div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
