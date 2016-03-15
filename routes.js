@@ -16,6 +16,8 @@ module.exports = function(app, db) {
 	var posts = db.collection("NMAstarterkit");
 	var articles = db.collection("articles");
 
+	var ObjectId = require('mongodb').ObjectID;
+
 	/*
 	|--------------------------------------------------------------------------
 	| Login Required Middleware
@@ -214,6 +216,27 @@ module.exports = function(app, db) {
 			res.json(items);
 
 		});
+	});
+
+
+	/*
+	 |--------------------------------------------------------------------------
+	 | GET ARTICLE BY ID
+	 |--------------------------------------------------------------------------
+	 */
+	app.put('/api/getArticleById', function(req, res, next) {
+		console.log('get article by ID: ', req.body.articleId);
+		// use mongoDB Driver to get all bancs in the database;
+
+		articles.findOne({"_id": new ObjectId(req.body.articleId)}, function(err, articleFound) {
+       		if (err) {
+                console.log("Error processing request. Cannot find user with this id.");
+            } 
+            //console.log("User has been found. Processing request ...");
+            console.log("articleFound", articleFound)
+            res.json(articleFound)
+    	});
+
 	});
 
 

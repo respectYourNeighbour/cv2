@@ -6,7 +6,7 @@
     'use strict';
 
     function menu1Ctrl($scope, HomeService) {
-        console.log('Menu 1  Controller');
+        console.log('About Me Controller');
 
         // GET =====================================================================
         // when landing on the page, get all todos and show them

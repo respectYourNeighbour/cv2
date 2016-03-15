@@ -6,9 +6,7 @@
     'use strict';
 
     function articleCtrl($scope, $stateParams, ArticlesService) {
-        console.log('ArticleCtrl with id: ' + $stateParams.articleID);
-        $scope.message = 'hi!'; 
-        $scope.phoneId = $stateParams.phoneId;
+        console.log('Articles List Controller');
 
         ArticlesService.getArticles().success(function(data){
         	console.log('articles found', data);
@@ -18,6 +16,6 @@
 
     angular
         .module('sampleApp')
-        .controller('ArticleController',  ['$scope', '$stateParams', 'ArticlesService', articleCtrl]);
+        .controller('ArticleListController',  ['$scope', '$stateParams', 'ArticlesService', articleCtrl]);
 
 }());

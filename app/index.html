@@ -56,19 +56,27 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li>
-                                <a ui-sref="about" translate="WHO_AM_I"></a>
+                                <a ui-sref="aboutMe" translate="WHO_AM_I"></a>
+                            </li>
+                            <li ng-if="!isAuthenticated()">
+                                <a ui-sref="articles" translate="GOOD_READ"></a>
                             </li>
                             <li>
-                                <a ui-sref="articles" translate="GOOD_READ"></a>
+                                <ul class="nav navbar-nav navbar-right" ng-if="isAuthenticated()">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a ui-sref="articlesList" translate="GOOD_READ"></a></li>
+                                            <li><a ui-sref="articleCreate">Create article</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </li>
                             <li>
                                 <a ui-sref="menu3" translate="PORTOFOLIO"></a>
                             </li>
                             <li>
                                 <a ui-sref="menu5" translate="CONTACT"></a>
-                            </li>
-                            <li ng-if="isAuthenticated()">
-                                <a ui-sref="textEditor">Text Editor</a>
                             </li>
                             <li ng-if="isAuthenticated()">
                                 <a ui-sref="messages.list">Messages</a>
@@ -173,11 +181,11 @@
         <!--*******************************
         ******* ANGULAR CONTROLLERS *******
         *********************************** -->
-        <!-- Home  Controller   --> <script src="scripts/controllers/MainCtrl.js"></script>
-        <!-- Home  Controller   --> <script src="scripts/controllers/ArticleListCtrl.js"></script>
-        <!-- Home  Controller   --> <script src="scripts/controllers/ArticleDetailCtrl.js"></script>
-        <!-- Menu 1 Controller  --> <script src="scripts/controllers/AboutMeCtrl.js"></script>
-        <!-- Menu 3 Controller  --> <script src="scripts/controllers/TextEditorCtrl.js"></script>
+        <!--      Main  Controller      -->         <script src="scripts/controllers/MainCtrl.js"></script>
+        <!--     About Me Controller    -->         <script src="scripts/controllers/AboutMeCtrl.js"></script>
+        <!-- Articles List  Controller  -->         <script src="scripts/controllers/ArticleListCtrl.js"></script>
+        <!-- Article Detail  Controller -->         <script src="scripts/controllers/ArticleDetailCtrl.js"></script>
+        <!-- Article Create Controller  -->         <script src="scripts/controllers/ArticleCreateCtrl.js"></script>
         <!-- Menu 4 Controller  --> <script src="scripts/controllers/MessagesCtrl.js"></script>
         <!-- Menu 5 Controller  --> <script src="scripts/controllers/ContactCtrl.js"></script>
         <!-- Login Controller   --> <script src="scripts/controllers/LoginCtrl.js"></script>

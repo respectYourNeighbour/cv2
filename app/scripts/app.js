@@ -16,7 +16,8 @@ angular
 			'cgBusy',
 			'satellizer',
 			'toastr',
-            'textAngular'
+            'textAngular',
+            'ngSanitize'
 	])
 	.config(function ($stateProvider, $translateProvider, $urlRouterProvider) {
 		function skipIfLoggedIn($q, $auth) {
@@ -46,31 +47,33 @@ angular
 	        .state('/', {
 	            templateUrl: 'views/home.html'
 	        })
-	        .state('about', {
+	        .state('aboutMe', {
 	            templateUrl: 'views/aboutMe.html',
-	            url : '/about',
+	            url : '/aboutMe',
 	            controller: 'AboutMeController'
 	        })
-	        .state('articles', {
-	            templateUrl: 'views/articles.html',
-	            url : '/articles',
-	            controller: 'ArticleController'
+	        .state('articlesList', {
+	            templateUrl: 'views/articlesList.html',
+	            url : '/articlesList',
+	            controller: 'ArticleListController'
 	        })
 	        .state('view', {
-	        	url: '/:articleId',
+	        	url: '/view/:articleId',
 	        	templateUrl: 'views/articleDetail.html',
 	        	controller: 'ArticleDetailController',
 	        	resolve: {
-	        		myFunc: function($stateParams) {
-	        			console.log('params: ', $stateParams);
-	        			return;
+	        		myFunc: function($stateParams, ArticlesService) {
+	        			return ArticlesService.getArticleById($stateParams.articleId).success(function(data){
+				            console.log('found the article: ', data);
+				        });
+	        			 
 	        		}
 	        	}
 	      	})
-	        .state('textEditor', {
-	            templateUrl: 'views/textEditor.html',
+	        .state('articleCreate', {
+	            templateUrl: 'views/articleCreate.html',
 	            url : '/textEditor',
-	            controller: 'TextEditorController',
+	            controller: 'ArticleCreateController',
 	            resolve: {
 		        	loginRequired: loginRequired
 		        }

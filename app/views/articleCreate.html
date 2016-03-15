@@ -3,6 +3,18 @@
 	    <div>
 	        <h1 translate="EDITOR">Editor</h1>
 	        <form name="form" role="form" ng-submit="save()" novalidate>
+				<div class="form-group">
+			    	<label for="articleTitle">Article Title</label>
+			    	<input type="text" class="form-control" id="articleTitle" placeholder="Article title" ng-model="articleTitle">
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="articleCategory">Article Category</label>
+			    	<input type="text" class="form-control" id="articleCategory" placeholder="Article Category" ng-model="articleCategory">
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="articleAuthor">Article Author</label>
+			    	<input type="text" class="form-control" id="articleAuthor" placeholder="Article Author" ng-model="articleAuthor">
+			  	</div>
 		        <text-angular name="htmlcontent" ng-model="htmlcontenttwo">
 		            <p>Any <b>HTML</b> we put in-between the text-angular tags gets automatically put into the editor if there <strong style="font-size: 12pt;"><u><em>is not</em></u></strong> a value assigned to the ngModel.</p>
 		            <p>If there is a value assigned to the ngModel, it replaces any html here. To see this, uncomment the line at the bottom of demo.html</p>
