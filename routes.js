@@ -10,13 +10,13 @@ module.exports = function(app, db) {
 
 	/*
 	|--------------------------------------------------------------------------
-	| DB COLLECTIONS
+	| - VARIABLES - DB COLLECTIONS, ETC.
 	|--------------------------------------------------------------------------
 	*/
 	var posts = db.collection("NMAstarterkit");
 	var articles = db.collection("articles");
-
 	var ObjectId = require('mongodb').ObjectID;
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -68,7 +68,6 @@ module.exports = function(app, db) {
 	})
 
 
-
 	function messageById(req, res, next, id) {
 		console.log('id',id);
 		if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -94,10 +93,11 @@ module.exports = function(app, db) {
 	  }
 	}
 
+
 	/****************************************************************************************************
 	*****************************************************************************************************
 	**
-	**      SERVER ROUTES
+	**      - SERVER ROUTES -
 	**      Here we have the server routes where we handle API calls, authentication routes, etc.
 	**
 	*****************************************************************************************************
@@ -198,9 +198,30 @@ module.exports = function(app, db) {
     });
 
 
+	/*
+	 |--------------------------------------------------------------------------
+	 | CREATE ARTICLE
+	 |--------------------------------------------------------------------------
+	 */
+	app.post('/api/createArticle', function(req, res) {
+		console.log("req.body: ", req.body)
+		var article = req.body;
+
+		articles.insert(article, function(error, inserted){
+			if(error){
+				console.log(error.message)
+				return db.close();
+			}
+			res.json(inserted);
+			console.dir("Successfully inserted article: "+ JSON.stringify(inserted));
+			//JSON.stringify is to actually get the json representation of this JavaScript object.
+		});
+	});
+
+
     /*
 	 |--------------------------------------------------------------------------
-	 | GET ARTICLES
+	 | GET ALL ARTICLES
 	 |--------------------------------------------------------------------------
 	 */
 	app.get('/api/getArticles', function(req, res) {
@@ -229,15 +250,54 @@ module.exports = function(app, db) {
 		// use mongoDB Driver to get all bancs in the database;
 
 		articles.findOne({"_id": new ObjectId(req.body.articleId)}, function(err, articleFound) {
-       		if (err) {
+			if (err) {
                 console.log("Error processing request. Cannot find user with this id.");
-            } 
+            }
             //console.log("User has been found. Processing request ...");
             console.log("articleFound", articleFound)
             res.json(articleFound)
     	});
-
 	});
+
+
+	/*
+	 |--------------------------------------------------------------------------
+	 | UPDATE ARTICLE
+	 |--------------------------------------------------------------------------
+	 */
+	app.post('/api/updateArticle', function(req, res) {
+		console.log("Update Article req.body: ", req.body.id)
+
+		articles.update({_id: new mongodb.ObjectID(req.body.id)}, {$set:{body: req.body.body, title: req.body.title, category: req.body.category, author: req.body.author}}, function(error, articleUpdated){
+			if(error){
+				console.log(error.message)
+				return db.close();
+			}
+			res.json(articleUpdated);
+			console.dir("Successfully updated article with id", articleUpdated);
+		});
+	});
+
+
+	/*
+	 |--------------------------------------------------------------------------
+	 | DELETE ARTICLE
+	 |--------------------------------------------------------------------------
+	 */
+	app.put('/api/deleteArticle', function(req, res, next) {
+		console.log('get article by ID: ', req.body.articleId);
+		// use mongoDB Driver to get all bancs in the database;
+
+		articles.remove({_id: new mongodb.ObjectID(req.body.articleId)}, function(err, removedArticle) {
+			if (err) {
+                console.log("Error processing request. Cannot find user with this id.");
+            }
+            //console.log("User has been found. Processing request ...");
+            console.log("deleted article", removedArticle)
+            res.json(removedArticle)
+    	});
+	});
+
 
 
 	/*
@@ -395,28 +455,6 @@ module.exports = function(app, db) {
 			res.json(objectFound)
 		});
 	});
-
-
-	/*
-	 |--------------------------------------------------------------------------
-	 | SEND TEXT
-	 |--------------------------------------------------------------------------
-	 */
-	app.post('/api/sendText', function(req, res) {
-		console.log("req.body: ", req.body)
-		var article = req.body;
-
-		articles.insert(article, function(error, inserted){
-			if(error){
-				console.log(error.message)
-				return db.close();
-			}
-			res.json(inserted);
-			console.dir("Successfully inserted article: "+ JSON.stringify(inserted));
-			//JSON.stringify is to actually get the json representation of this JavaScript object.
-		});
-	});
-
 
 
 	/****************************************************************************************************

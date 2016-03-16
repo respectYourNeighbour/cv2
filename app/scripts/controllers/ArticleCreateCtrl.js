@@ -5,8 +5,8 @@
 (function() {
     'use strict';
 
-    function articleCreateCtrl($scope, TextEditorService) {
-        console.log('Article Create');     
+    function articleCreateCtrl($scope, ArticlesService) {
+        console.log('Article Create');
 
         $scope.save = function() {
             $scope.text = {
@@ -16,7 +16,7 @@
                 'author': $scope.articleAuthor
             };
 
-	        TextEditorService.sendText($scope.text).success(function(data) {
+	        ArticlesService.createArticle($scope.text).success(function(data) {
 	        	console.log('recieve success in ctl'+data);
 	        });
 	    };
@@ -25,6 +25,6 @@
 
     angular
         .module('sampleApp')
-        .controller('ArticleCreateController',  ['$scope', 'TextEditorService', articleCreateCtrl]);
+        .controller('ArticleCreateController',  ['$scope', 'ArticlesService', articleCreateCtrl]);
 
 }());

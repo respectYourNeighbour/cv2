@@ -54,7 +54,7 @@ body{
 	}
 	.aboutMeWrapper{
 		background-color: #fff;
-	margin-bottom: 5em;
+	    margin-bottom: 5em;
 		padding: 8%;
 		box-shadow:
 			10px 0px 15px -5px rgba(0, 0, 0, 0.15),
@@ -76,8 +76,8 @@ body{
 	}
 	.aboutMeContent{
 		font-family: 'Crimson Text', 'Times New Roman', 'Times', serif;
-	font-family: questa_granderegular;
-		
+	    font-family: questa_granderegular;
+
 		color: #444;
 		p{
 			line-height: 140%;
@@ -87,24 +87,14 @@ body{
 	}
 }
 
-/* -------------------------------- 
-	ARTICLE
--------------------------------- */
-.articleWrapper{
-	margin-top: 60px;
-	background-color: #fff;
-    margin-bottom: 5em;
-    padding: 8%;
-    box-shadow: 10px 0px 15px -5px rgba(0, 0, 0, 0.15), -10px 0px 15px -5px rgba(0, 0, 0, 0.15);
-}
 
-/* -------------------------------- 
+/* --------------------------------
 
 Primary style
 
 -------------------------------- */
 
-/* -------------------------------- 
+/* --------------------------------
 
 Modules - reusable parts of our design
 
@@ -122,9 +112,9 @@ Modules - reusable parts of our design
   clear: both;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
-Main components 
+Main components
 
 -------------------------------- */
 
@@ -388,7 +378,7 @@ Main components
 	.cd-timeline-block.yellow .cd-timeline-content::before{
 		border-left-color: $color-yellow7;
 	}
-	
+
 	.cd-timeline-content {
 		float: left;
 	}
@@ -419,8 +409,8 @@ Main components
 	.cd-timeline-block.yellow:nth-child(even) .cd-timeline-content::before{
 		border-right-color: $color-yellow7;
 	}
-	
-	
+
+
 	.cd-timeline-block:nth-child(even) .cd-timeline-content.red::before{
 		border-right-color: #c03b44;
 	}

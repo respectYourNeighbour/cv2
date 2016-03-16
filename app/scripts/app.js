@@ -21,25 +21,25 @@ angular
 	])
 	.config(function ($stateProvider, $translateProvider, $urlRouterProvider) {
 		function skipIfLoggedIn($q, $auth) {
-      		var deferred = $q.defer();
-      		if ($auth.isAuthenticated()) {
-      			console.log('skipIfLoggedIn');
+			var deferred = $q.defer();
+			if ($auth.isAuthenticated()) {
+				console.log('skipIfLoggedIn');
         		deferred.reject();
-      		} else {
+			} else {
         		deferred.resolve();
-      		}
-      		return deferred.promise;
+			}
+			return deferred.promise;
     	}
 
 	    function loginRequired($q, $location, $auth) {
-	      	var deferred = $q.defer();
-	      	if ($auth.isAuthenticated()) {
-	        	deferred.resolve();
-	      	} else {
-	      		console.log('loginRequired');
-	        	$location.path('/login');
-	      	}
-	      	return deferred.promise;
+			var deferred = $q.defer();
+			if ($auth.isAuthenticated()) {
+				deferred.resolve();
+			} else {
+				console.log('loginRequired');
+				$location.path('/login');
+			}
+			return deferred.promise;
 	    }
 
         $stateProvider
@@ -62,14 +62,14 @@ angular
 	        	templateUrl: 'views/articleDetail.html',
 	        	controller: 'ArticleDetailController',
 	        	resolve: {
-	        		myFunc: function($stateParams, ArticlesService) {
+	        		resolveGetArticleById: function($stateParams, ArticlesService) {
 	        			return ArticlesService.getArticleById($stateParams.articleId).success(function(data){
 				            console.log('found the article: ', data);
 				        });
-	        			 
+
 	        		}
 	        	}
-	      	})
+			})
 	        .state('articleCreate', {
 	            templateUrl: 'views/articleCreate.html',
 	            url : '/textEditor',

@@ -1,7 +1,32 @@
 /****************************
  ********* NEWS BOX *********
  ****************************/
- 
+ /* --------------------------------
+ 	ARTICLE
+ -------------------------------- */
+ .articleWrapper{
+ 	margin-top: 60px;
+ 	background-color: #fff;
+     margin-bottom: 5em;
+     padding: 100px 80px;
+     box-shadow: 10px 0px 15px -5px rgba(0, 0, 0, 0.15), -10px 0px 15px -5px rgba(0, 0, 0, 0.15);
+     h1{
+         font-family: font9;
+         margin-bottom: 40px;
+     }
+    p, ol, , ul {
+        font-family: 'Crimson Text', 'Times New Roman', 'Times', serif;
+        font-family: questa_granderegular;
+        color: #444;
+        line-height: 140%;
+        margin-bottom: 1em;
+        font-size: 1.7em;
+    }
+    ol li{
+        margin-bottom: 20px;
+    }
+}
+
 .view {
 	position: relative;
 	/*width: 400px;*/
@@ -18,6 +43,7 @@
 		overflow: hidden;
 	 }
 	.panel {
+        font-family: font4;
 		box-sizing: border-box;
 		width: 100%;
 		height: 50%;
@@ -25,7 +51,8 @@
 		background: $color-pink8;
 		color: #fff;
 		padding: 40px;
-		font: 50px Satisfy;
+		/*font: 40px Satisfy;*/
+        font-size: 35px;
 		text-align: center;
 		margin: 0px;
 		border-radius: 0px;
@@ -61,30 +88,29 @@
   	margin-top: -300px;
 }
 
-.itemHead  { 
-	position: relative; 
-	padding: 20px; 
-	background: #fff; 
-	font-size: 14px; 
-	color: #999; 
+.itemHead  {
+	position: relative;
+	padding: 20px;
+	background: #fff;
+	font-size: 14px;
+	color: #999;
 }
 
-.itemHead:before  { 
-	content: ""; 
-	position: absolute; 
-	z-index: 1; 
-	top: 100%; 
-	right: 10%; 
-	border-top: 15px solid #fff; 
-	border-left: 15px solid transparent; 
-	border-right: 15px solid transparent; 
+.itemHead:before  {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 100%;
+	right: 10%;
+	border-top: 15px solid #fff;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
 }
-.itemHead:after  { 
-	content: attr(data-category); 
-	position: absolute; 
-	right: 20px; 
-	text-align: right; 
-	font-style: italic; 
-	text-transform: uppercase; 
+.itemHead:after  {
+	content: attr(data-category);
+	position: absolute;
+	right: 20px;
+	text-align: right;
+	font-style: italic;
+	text-transform: uppercase;
 }
-

@@ -10,17 +10,35 @@
         .factory('ArticlesService', ['$http', function($http) {
 
             // each function returns a promise object
+            function createArticle(article) {
+                return $http.post('/api/createArticle', article);
+            }
+
+            function getArticles() {
+                return $http.get('/api/getArticles');
+            }
+
+            function getArticleById(articleId) {
+                articleId = {articleId: articleId};
+                return $http.put('/api/getArticleById', articleId).success(function(){
+
+                });
+            }
+
+            function updateArticle(article) {
+                return $http.post('/api/updateArticle', article);
+            }
+
+            function deleteArticle(articleId) {
+                return $http.put('/api/deleteArticle', articleId);
+            }
+
             return {
-                getArticles : function() {
-                    console.log('get all articles - service');
-                    return $http.get('/api/getArticles');
-                },
-                getArticleById: function(articleId) {
-                    articleId = {articleId: articleId};
-                    return $http.put('/api/getArticleById', articleId).success(function(data){
-                        
-                    });
-                }
+                createArticle: createArticle,
+                getAllArticles: getArticles,
+                getArticleById: getArticleById,
+                updateArticle: updateArticle,
+                deleteArticle: deleteArticle
             };
 
     }]);
