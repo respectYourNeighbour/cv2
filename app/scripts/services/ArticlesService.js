@@ -30,6 +30,7 @@
             }
 
             function deleteArticle(articleId) {
+                articleId = {articleId: articleId};
                 return $http.put('/api/deleteArticle', articleId);
             }
 

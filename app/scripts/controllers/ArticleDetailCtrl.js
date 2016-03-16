@@ -56,6 +56,7 @@
             };
 
 	        ArticlesService.updateArticle($scope.edittedArticle).success(function(data) {
+                console.log('updated article: ',data);
                 $scope.editMode = false;
 	        });
 	    };
@@ -65,7 +66,6 @@
         };
 
         $scope.confirmDelete = function(articleId) {
-            var articleId = {articleId: articleId};
             $('#deleteArticleModal').modal('hide');
             $('#deleteArticleModal').on('hidden.bs.modal', function () {
                 ArticlesService.deleteArticle(articleId).success(function(data) {
@@ -73,7 +73,7 @@
                     $location.path('articlesList');
                 });
             });
-        }
+        };
     }
 
     angular
