@@ -32,9 +32,9 @@ var compression 	= require('compression');
 var db = mongoose.connection;
 // We set the port on which our application will run.
 //dev
-/*var port = process.env.PORT || 8080;*/
+var port = process.env.PORT || 8080;
 //prod
-var port = process.env.PORT || 3000;
+//var port = process.env.PORT || 3000;
 
 //Variables (in seconds) for caching static resources;
 var oneDay = 86400000;

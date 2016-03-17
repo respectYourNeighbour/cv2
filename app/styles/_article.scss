@@ -14,16 +14,30 @@
          font-family: font9;
          margin-bottom: 40px;
      }
-    p, ol, , ul {
+    p, ol, ul {
         font-family: 'Crimson Text', 'Times New Roman', 'Times', serif;
         font-family: questa_granderegular;
-        color: #444;
+
         line-height: 140%;
         margin-bottom: 1em;
         font-size: 1.7em;
     }
+    p, ol, ul, li, p span {
+        color: #333;
+    }
     ol li{
         margin-bottom: 20px;
+    }
+    ul ul{
+        font-size: 1em;
+    }
+    blockquote{
+        p{
+            font-size: 1em;
+            font-family: font7;
+            color: #777;
+        }
+
     }
 }
 
