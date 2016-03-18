@@ -37,6 +37,11 @@ body{
 	-webkit-font-smoothing: antialiased;
   background: url('../images/patterns/pattern59.png');
 }
+.mainContainer{
+    margin-top: 70px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
 .noselect {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -49,17 +54,6 @@ body{
 
 
 .aboutMe {
-	.container {
-		margin-top: 10em;
-	}
-	.aboutMeWrapper{
-		background-color: #fff;
-	    margin-bottom: 5em;
-		padding: 8%;
-		box-shadow:
-			10px 0px 15px -5px rgba(0, 0, 0, 0.15),
-			-10px 0px 15px -5px rgba(0, 0, 0, 0.15);
-	}
   hr{
 	margin-top:  7em;
 	margin-bottom: 7em;
@@ -542,4 +536,25 @@ Main components
 	-o-transform: translateX(0);
 	transform: translateX(0);
   }
+}
+
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .mainContainer{
+        margin-top: 100px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
 }

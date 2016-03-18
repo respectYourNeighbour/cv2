@@ -1,26 +1,26 @@
-/****************************
- ********* NEWS BOX *********
- ****************************/
  /* --------------------------------
  	ARTICLE
  -------------------------------- */
- .articleWrapper{
- 	margin-top: 60px;
+
+ /* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+ .whiteWrapper{
  	background-color: #fff;
-     margin-bottom: 5em;
-     padding: 100px 80px;
-     box-shadow: 10px 0px 15px -5px rgba(0, 0, 0, 0.15), -10px 0px 15px -5px rgba(0, 0, 0, 0.15);
-     h1{
-         font-family: font9;
-         margin-bottom: 40px;
-     }
-    p, ol, , ul {
+    margin-bottom: 5em;
+    padding: 40px 20px;
+    box-shadow: 10px 0px 15px -5px rgba(0, 0, 0, 0.15), -10px 0px 15px -5px rgba(0, 0, 0, 0.15);
+    h1{
+        font-family: font9;
+        margin-bottom: 40px;
+    }
+    p, ol, ul {
         font-family: 'Crimson Text', 'Times New Roman', 'Times', serif;
         font-family: questa_granderegular;
         color: #444;
         line-height: 140%;
         margin-bottom: 1em;
-        font-size: 1.7em;
+        font-size: 1.3em;
     }
     ol li{
         margin-bottom: 20px;
@@ -113,4 +113,25 @@
 	text-align: right;
 	font-style: italic;
 	text-transform: uppercase;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .whiteWrapper{
+        padding: 100px 80px;
+        p, ol, ul {
+            font-size: 1.7em;
+        }
+   }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
 }
