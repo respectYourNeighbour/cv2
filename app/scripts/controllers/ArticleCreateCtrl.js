@@ -5,7 +5,7 @@
 (function() {
     'use strict';
 
-    function articleCreateCtrl($scope, ArticlesService) {
+    function articleCreateCtrl($scope, ArticlesService, $location) {
         console.log('Article Create');
 
         $scope.save = function() {
@@ -18,6 +18,7 @@
 
 	        ArticlesService.createArticle($scope.text).success(function(data) {
 	        	console.log('recieve success in ctl'+data);
+                $location.path('articlesList');
 	        });
 	    };
 
@@ -25,6 +26,6 @@
 
     angular
         .module('sampleApp')
-        .controller('ArticleCreateController',  ['$scope', 'ArticlesService', articleCreateCtrl]);
+        .controller('ArticleCreateController',  ['$scope', 'ArticlesService', '$location', articleCreateCtrl]);
 
 }());

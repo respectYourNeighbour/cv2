@@ -40,7 +40,7 @@ var port = process.env.PORT || 8080;
 var oneDay = 86400000;
 var sevenDay = 604800000;
 
-mongoose.connect('mongodb://127.0.0.1/NMAstarterkit');
+mongoose.connect('mongodb://127.0.0.1/filipsBlog');
 
 db.on('error',function (err) {
   console.log('Mongoose default connection error: ' + err);
