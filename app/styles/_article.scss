@@ -4,40 +4,40 @@
  /* --------------------------------
  	ARTICLE
  -------------------------------- */
- .articleWrapper{
+ .whiteWrapper{
  	margin-top: 60px;
  	background-color: #fff;
-     margin-bottom: 5em;
-     padding: 100px 80px;
-     box-shadow: 10px 0px 15px -5px rgba(0, 0, 0, 0.15), -10px 0px 15px -5px rgba(0, 0, 0, 0.15);
-     h1{
-         font-family: font9;
-         margin-bottom: 40px;
-     }
+    margin-bottom: 5em;
+    padding: 100px 80px;
+    box-shadow: 10px 0px 15px -5px rgba(0, 0, 0, 0.15), -10px 0px 15px -5px rgba(0, 0, 0, 0.15);
+    h1, h2{
+        font-family: font9;
+        margin-bottom: 40px;
+    }
     p, ol, ul {
         font-family: 'Crimson Text', 'Times New Roman', 'Times', serif;
         font-family: questa_granderegular;
 
         line-height: 140%;
-        margin-bottom: 1em;
+        margin-bottom: 0.8em;
         font-size: 1.7em;
     }
-    p, ol, ul, li, p span {
-        color: #333;
+    h1, h2, h3, p, ol, ul, li, p span {
+        color: #444;
     }
     ol li{
-        margin-bottom: 20px;
+        margin-bottom: 5px;
     }
     ul ul{
         font-size: 1em;
+        margin-bottom: 5px;
     }
     blockquote{
         p{
             font-size: 1em;
-            font-family: font7;
+            font-family: font4;
             color: #777;
         }
-
     }
 }
 
