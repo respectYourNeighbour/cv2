@@ -17,6 +17,7 @@
             id: resolveGetArticleById.data._id,
             body: $sce.trustAsHtml(resolveGetArticleById.data.body),
             originalPost: resolveGetArticleById.data.originalPost,
+            articleIcons: resolveGetArticleById.data.articleIcons
         };
 
         $scope.editArticle = function(articleId) {
@@ -29,7 +30,8 @@
                     category: data.category,
                     id: data._id,
                     body: data.body,
-                    originalPost: data.originalPost
+                    originalPost: data.originalPost,
+                    articleIcons: data.articleIcons
                 };
             });
         };
@@ -47,7 +49,8 @@
                 'category': $scope.articleEditting.category,
                 'author': $scope.articleEditting.author,
                 'id': articleId,
-                'originalPost': $scope.articleEditting.originalPost
+                'originalPost': $scope.articleEditting.originalPost,
+                'articleIcons': $scope.articleEditting.articleIcons
             };
 
             $scope.articleDetail = {
@@ -56,7 +59,8 @@
                 'category': $scope.articleEditting.category,
                 'author': $scope.articleEditting.author,
                 'id': articleId,
-                'originalPost': $scope.articleEditting.originalPost
+                'originalPost': $scope.articleEditting.originalPost,
+                'articleIcons': $scope.articleEditting.articleIcons
             };
 
 	        ArticlesService.updateArticle($scope.edittedArticle).success(function(data) {

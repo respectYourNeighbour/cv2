@@ -6,23 +6,32 @@
 				<div class="form-group">
 			    	<label for="articleTitle">Article Title</label>
 			    	<input type="text" class="form-control" id="articleTitle" placeholder="Article title" ng-model="articleTitle">
-			  	</div>
-			  	<div class="form-group">
+				</div>
+				<div class="form-group">
 			    	<label for="articleCategory">Article Category</label>
 			    	<input type="text" class="form-control" id="articleCategory" placeholder="Article Category" ng-model="articleCategory">
-			  	</div>
-			  	<div class="form-group">
+				</div>
+				<div class="form-group">
+					<label for="selectArticleIcons">Mutiple select list (hold shift to select more than one):</label>
+						<select multiple class="form-control" id="selectArticleIcons" ng-model="selectArticleIcons">
+							<option value="node">node</option>
+							<option value="smart">smart</option>
+							<option value="writting">writting</option>
+					</select>
+				</div>
+				<div class="form-group">
 			    	<label for="articleAuthor">Article Author</label>
 			    	<input type="text" class="form-control" id="articleAuthor" placeholder="Article Author" ng-model="articleAuthor">
-			  	</div>
+				</div>
 		        <text-angular name="htmlcontent" ng-model="htmlcontenttwo">
-		            <p>Any <b>HTML</b> we put in-between the text-angular tags gets automatically put into the editor if there <strong style="font-size: 12pt;"><u><em>is not</em></u></strong> a value assigned to the ngModel.</p>
-		            <p>If there is a value assigned to the ngModel, it replaces any html here. To see this, uncomment the line at the bottom of demo.html</p>
+		            <p>Type <b>here</b></p>
 		        </text-angular>
+				<div class="form-group">
+			    	<label for="articleCategory">Original post</label>
+			    	<input type="text" class="form-control" id="originalPost" placeholder="Original post" ng-model="originalPost">
+				</div>
 		        <button class="btn btn-primary">Save</button>
 			</form>
-	        <h1>Bound with ta-bind, our internal html-binding directive</h1>
-	         <div ta-bind="text" ng-model="htmlcontenttwo" ta-readonly='disabled'></div>
 	    </div>
 	</section>
 </div>

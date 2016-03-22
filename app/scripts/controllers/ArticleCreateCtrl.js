@@ -13,7 +13,9 @@
                 'body' : $scope.htmlcontenttwo,
                 'title': $scope.articleTitle,
                 'category': $scope.articleCategory,
-                'author': $scope.articleAuthor
+                'author': $scope.articleAuthor,
+                'articleIcons': $scope.selectArticleIcons,
+                'originalPost': $scope.originalPost
             };
 
 	        ArticlesService.createArticle($scope.text).success(function(data) {
