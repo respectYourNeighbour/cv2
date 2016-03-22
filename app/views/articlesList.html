@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" ng-repeat="article in articles">
 			<div class="itemWrapper">
-			<a ui-sref="view({ articleId: article._id })">
+			<a ui-sref="viewArticleDetail({ articleId: article._id })">
 				<div class="itemHead" data-category="{{article.category}}">{{article.author}}</div>
 				<div class="view">
 					<div class="inner">
@@ -10,7 +10,6 @@
 						<div class="panel noselect">read more...</div>
 					</div>
 				</div>
-
 			</a>
 			<div class="articleFooter">
 				<div class="{{article.icon}}"></div>
