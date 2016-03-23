@@ -72,7 +72,7 @@
                             </ul>
                         </li>
                         <li ng-show="can('can_portofolio')">
-                            <a ui-sref="menu3" translate="PORTOFOLIO"></a>
+                            <a ui-sref="portofolio" translate="PORTOFOLIO"></a>
                         </li>
                         <li ng-show="can('can_contact')">
                             <a ui-sref="menu5" translate="CONTACT"></a>
@@ -80,10 +80,10 @@
                         <li ng-if="isAuthenticated() && can('can_messages')">
                             <a ui-sref="messages.list">Messages</a>
                         </li>
-                        <li ng-if="!isAuthenticated()">
+                        <li ng-if="!isAuthenticated() && can('can_login')">
                             <a ui-sref="login">Login</a>
                         </li>
-                        <li ng-if="!isAuthenticated()">
+                        <li ng-if="!isAuthenticated() && can('can_signup')">
                             <a ui-sref="signup">Sign up</a>
                         </li>
                         <li ng-if="isAuthenticated()">
@@ -186,6 +186,7 @@
         <!-- Articles List  Controller  -->         <script src="scripts/controllers/ArticleListCtrl.js"></script>
         <!-- Article Detail  Controller -->         <script src="scripts/controllers/ArticleDetailCtrl.js"></script>
         <!-- Article Create Controller  -->         <script src="scripts/controllers/ArticleCreateCtrl.js"></script>
+        <!-- Portofolio Controller      -->         <script src="scripts/controllers/PortofolioCtrl.js"></script>
         <!-- Messages Controller        -->         <script src="scripts/controllers/MessagesCtrl.js"></script>
         <!-- Contact Controller         -->         <script src="scripts/controllers/ContactCtrl.js"></script>
         <!-- Login Controller           -->         <script src="scripts/controllers/LoginCtrl.js"></script>

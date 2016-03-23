@@ -46,7 +46,8 @@ angular
         $stateProvider
             // home page
 	        .state('/', {
-	            templateUrl: 'views/home.html'
+	            templateUrl: 'views/home.html',
+				url : '/',
 	        })
 	        .state('aboutMe', {
 				resolve: {
@@ -116,8 +117,24 @@ angular
 		        },
 	            templateUrl: 'views/articleCreate.html',
 	            url : '/textEditor',
-	            controller: 'ArticleCreateController',
+	            controller: 'ArticleCreateController'
 	        })
+			.state('portofolio', {
+				resolve: {
+					'acl' : ['$q', 'AclService', function($q, AclService){
+						if(AclService.can('can_portofolio')){
+							//Has proper permissions
+							return true;
+						}else{
+							//Does not have permission
+							return $q.reject('Unauthorized');
+						}
+					}]
+		        },
+				templateUrl: 'views/portofolio.html',
+	            url : '/portofolio',
+	            controller: 'PortofolioController'
+			})
 	        .state('messages', {
 				resolve: {
 					'acl' : ['$q', 'AclService', function($q, AclService){
@@ -281,12 +298,12 @@ angular
     })
 	.run(['AclService', '$rootScope', '$location', function(AclService, $rootScope, $location) {
 		var aclData = {
-			guest: ['can_about_me', 'can_article_list', 'can_portofolio', 'can_signup'],
+			guest: ['can_about_me', 'can_article_list', 'can_article_detail', 'can_portofolio'],
 			member: ['can_about_me', 'can_article_list', 'can_article_detail', 'can_portofolio', 'can_contact', 'can_messages', 'can_login', 'can_signup', 'can_profile'],
 			admin: ['can_about_me', 'can_article_list', 'can_article_detail', 'can_article_create', 'can_portofolio', 'can_contact', 'can_messages', 'can_login', 'can_signup', 'can_profile']
 		};
 		AclService.setAbilities(aclData);
-		AclService.attachRole('admin');
+		AclService.attachRole('guest');
 
 		//If the route change failed due to our "Unauthorized" error, redirect them
 		$rootScope.$on('$routeChangeError', function(current, previous, rejection){
