@@ -1,24 +1,25 @@
-/****************************
- ********* NEWS BOX *********
- ****************************/
  /* --------------------------------
  	ARTICLE
  -------------------------------- */
+.container.articleDetail{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
  .whiteWrapper{
     background-color: #fff;
-    padding: 60px 80px 100px 80px;
+    padding: 20px 20px 50px 20px;
     box-shadow: 10px 0px 15px -5px rgba(0, 0, 0, 0.15), -10px 0px 15px -5px rgba(0, 0, 0, 0.15);
     h1, h2{
         font-family: font9;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
     p, ol, ul {
         font-family: 'Crimson Text', 'Times New Roman', 'Times', serif;
         font-family: questa_granderegular;
-
         line-height: 140%;
         margin-bottom: 0.8em;
-        font-size: 1.7em;
+        font-size: 1.4em;
     }
     h1, h2, h3, p, ol, ul, li, p span {
         color: #444;
@@ -42,7 +43,7 @@
 .view {
 	position: relative;
 	/*width: 400px;*/
-	height: 300px;
+	height: 200px;
 	overflow: hidden;
 
 	.inner {
@@ -64,7 +65,7 @@
 		color: #fff;
 		padding: 40px;
 		/*font: 40px Satisfy;*/
-        font-size: 35px;
+        font-size: 1.8em;
 		text-align: center;
 		margin: 0px;
 		border-radius: 0px;
@@ -77,17 +78,20 @@
 		color: #fff;
 	}
 }
+.view:hover .inner {
+    margin-top: -200px;
+}
 .articleHeader{
     background-color: #444;
-    padding: 40px 80px 40px 80px;
-    margin-top: 30px;
+    padding: 15px 40px 15px 40px;
+    margin-top: 15px;
     color: #fff;
     font-family: font9;
 }
 .articleFootNotes{
     background-color: #444;
     padding: 40px 80px 40px 80px;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
     color: #fff;
     font-family: font9;
 }
@@ -136,10 +140,6 @@
 	-10px 0px 15px -5px rgba(0, 0, 0, 0.15);
 }
 
-.view:hover .inner {
-    margin-top: -300px;
-}
-
 .itemHead  {
 	position: relative;
 	padding: 20px;
@@ -165,4 +165,52 @@
 	text-align: right;
 	font-style: italic;
 	text-transform: uppercase;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .container.articleDetail{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .whiteWrapper{
+        padding: 40px 40px 50px 40px;
+        p, ol, ul {
+           font-size: 1.7em;
+        }
+        h1, h2{
+            margin-bottom: 40px;
+        }
+   }
+   .articleHeader{
+        padding: 40px 80px 40px 80px;
+        margin-top: 30px;
+    }
+    .articleFootNotes{
+        margin-bottom: 100px;
+    }
+    .view {
+        height: 300px;
+    	.inner {
+
+    	 }
+    	.panel {
+            font-size: 2.2em;
+    	}
+    }
+    .view:hover .inner {
+        margin-top: -300px;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .whiteWrapper{
+        padding: 60px 80px 100px 80px;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
 }

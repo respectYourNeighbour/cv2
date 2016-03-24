@@ -35,7 +35,13 @@ body, html{
 }
 body{
 	-webkit-font-smoothing: antialiased;
-  background: url('../images/patterns/pattern59.png');
+    background: url('../images/patterns/pattern59.png');
+}
+h1{
+    font-size: 1.9em;
+}
+h2{
+    font-size: 1.7em;
 }
 .mainContainer{
     margin-top: 70px;
@@ -54,18 +60,13 @@ body{
 
 
 .aboutMe {
-  hr{
-	margin-top:  7em;
-	margin-bottom: 7em;
-	border-top: 1px solid #E8EAED;
-  }
+    hr{
+        margin-top:  7em;
+        margin-bottom: 7em;
+        border-top: 1px solid #E8EAED;
+    }
 	.aboutMeTitle {
 		font-family: font9;
-		font-size: 2.3em;
-		line-height: 120%;
-		font-weight: 700;
-		letter-spacing: -1px;
-		word-break: break-word;
 		margin-bottom: 40px;
 	}
 	.aboutMeContent{
@@ -76,7 +77,7 @@ body{
 		p{
 			line-height: 140%;
 			margin-bottom: 1em;
-			font-size: 1.7em;
+			font-size: 1.4em;
 		}
 	}
 }
@@ -542,11 +543,26 @@ Main components
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    h1{
+        font-size: 2.6em;
+    }
+    h2{
+        font-size: 2.4em;
+    }
     .mainContainer{
         margin-top: 100px;
         padding-right: 15px;
         padding-left: 15px;
     }
+
+    .aboutMe {
+    	.aboutMeContent{
+    		p{
+    			font-size: 1.7em;
+    		}
+    	}
+    }
+
 }
 
 /* Medium devices (desktops, 992px and up) */
