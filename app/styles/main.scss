@@ -1,7 +1,3 @@
-/****************************
- ********* MAIN CSS *********
- ****************************/
-
  /*
 |--------------------------------------------------------------------------
 | IMPORTS
@@ -53,153 +49,8 @@ h2{
 	cursor: pointer;
 }
 
-.cd-container {
-    /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
-    width: 90%;
-    max-width: 1170px;
-    margin: 0 auto;
-    &::after{
-        /* clearfix */
-        content: '';
-        display: table;
-        clear: both;
-    }
-}
-
-
-
-#cd-timeline {
-	position: relative;
-	padding: 2em 0;
-	margin-top: 2em;
-	margin-bottom: 2em;
-	i{
-		width: 100%;
-		text-align: center;
-		color: #fff;
-		font-size: 1.3em;
-		margin-top: 30%;
-	}
-    &::before {
-        /* this is the vertical line */
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 18px;
-        height: 100%;
-        width: 4px;
-        background: #d7e4ed;
-    }
-}
-
-.cd-timeline-block {
-	position: relative;
-	margin: 2em 0;
-    &::after {
-    	clear: both;
-    	content: "";
-    	display: table;
-    }
-    &:first-child {
-    	margin-top: 0;
-    }
-    &:last-child {
-    	margin-bottom: 0;
-    }
-}
-
-.cd-timeline-block.green .cd-timeline-content,
-.cd-timeline-block.green .cd-timeline-img {
-	background-color: $color-green18;
-}
-.cd-timeline-block.red .cd-timeline-content,
-.cd-timeline-block.red .cd-timeline-img {
-	background-color: $color-red2;
-}
-.cd-timeline-block.yellow .cd-timeline-content,
-.cd-timeline-block.yellow .cd-timeline-img {
-	background-color: $color-yellow7;
-}
-.cd-timeline-block.green .cd-timeline-content::before{
-	border-right: 7px solid $color-green18;
-}
-.cd-timeline-block.red .cd-timeline-content::before{
-	border-right: 7px solid $color-red2;
-}
-.cd-timeline-block.yellow .cd-timeline-content::before{
-	border-right: 7px solid $color-yellow7;
-}
-
-.cd-timeline-img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	box-shadow: 0 0 0 4px #ffffff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
-}
-
-.cd-timeline-img.cd-location {
-    background: #f0ca45;
-}
-
-.cd-timeline-content {
-	position: relative;
-    font-size: 1.2em;
-	margin-left: 60px;
-	border-radius: 0.25em;
-	padding: 1em;
-	box-shadow: 0 3px 0 #d7e4ed;
-    float: left;
-    padding: .8em 1em;
-    background: #acb7c0;
-    color: #ffffff;
-    h2 {
-    	color: #fff;
-    }
-    p {
-        margin: 1em 0;
-        line-height: 1.6;
-    }
-    .schoolName{
-        font-size: 1.4em;
-        color: #fff;
-    }
-    .cd-date{
-    	color: #444;
-        font-family: font6;
-        float: left;
-        padding: .8em 0;
-        opacity: .7;
-    }
-    &::before {
-        content: '';
-        position: absolute;
-        top: 16px;
-        right: 100%;
-        height: 0;
-        width: 0;
-        border: 7px solid transparent;
-        border-right: 7px solid #ffffff;
-    }
-    &::after {
-    	clear: both;
-    	content: "";
-    	display: table;
-    }
-}
-
-.cd-timeline-content, .cd-timeline-content .cd-date {
-  display: inline-block;
-}
-
-.no-touch .cd-timeline-content {
-  background-color: #bac4cb;
-}
 
 /* Small devices (tablets, 768px and up) */
-
 @media (min-width: 768px) {
     h1{
         font-size: 2.6em;
@@ -207,30 +58,10 @@ h2{
     h2{
         font-size: 2.4em;
     }
-    .cd-timeline-content h2 {
-        font-size: 2em;
-        font-family: font6;
-        margin-bottom: 20px;
-        p {
-            font-size: 16px;
-            font-size: 1em;
-        }
-    }
-    .cd-timeline-content, .cd-timeline-content .cd-date {
-        font-size: 14px;
-        font-size: 0.875em;
-    }
     .mainContainer{
         margin-top: 100px;
         padding-right: 15px;
         padding-left: 15px;
-    }
-    .aboutMe {
-    	.aboutMeContent{
-    		p{
-    			font-size: 1.7em;
-    		}
-    	}
     }
 }
 
@@ -240,96 +71,7 @@ h2{
 }
 
 @media only screen and (min-width: 1170px) {
-    #cd-timeline {
-		margin-bottom: 3em;
-        i{
-            font-size: 2em;
-        }
-        &::before {
-    		left: 50%;
-    		margin-left: -2px;
-    	}
-	}
-    .cd-timeline-img {
-		width: 60px;
-		height: 60px;
-		left: 50%;
-		margin-left: -30px;
-		/* Force Hardware Acceleration in WebKit */
-		-webkit-transform: translateZ(0);
-		-webkit-backface-visibility: hidden;
-	}
 
-	.cd-timeline-block {
-		margin: 7em 0;
-        &:first-child {
-    		margin-top: 0;
-    	}
-        &:last-child {
-    		margin-bottom: 0;
-    	}
-	}
-	.cd-timeline-content {
-		margin-left: 0;
-		padding: 1.6em;
-		width: 45%;
-        float: none;
-        .cd-date {
-    		position: absolute;
-    		width: 100%;
-    		left: 122%;
-    		top: 6px;
-    		font-size: 16px;
-    		font-size: 1.2em;
-    	}
-        &::before {
-    		top: 24px;
-    		left: 100%;
-    		border-color: transparent;
-    		border-left-color: #ffffff;
-    	}
-	}
-
-	.cd-timeline-block.green .cd-timeline-content::before{
-		border-left-color: $color-green18;
-	}
-	.cd-timeline-block.red .cd-timeline-content::before{
-		border-left-color: $color-red2;
-	}
-	.cd-timeline-block.yellow .cd-timeline-content::before{
-		border-left-color: $color-yellow7;
-	}
-
-	.cd-timeline-block:nth-child(even) .cd-timeline-content {
-		float: right;
-	}
-	.cd-timeline-block:nth-child(even) .cd-timeline-content::before {
-		top: 24px;
-		left: auto;
-		right: 100%;
-		border-color: transparent;
-		border-right-color: #ffffff;
-	}
-	.cd-timeline-block.green:nth-child(even) .cd-timeline-content::before{
-		border-right-color: $color-green18;
-	}
-	.cd-timeline-block.red:nth-child(even) .cd-timeline-content::before{
-		border-right-color: $color-red2;
-	}
-	.cd-timeline-block.yellow:nth-child(even) .cd-timeline-content::before{
-		border-right-color: $color-yellow7;
-	}
-	.cd-timeline-block:nth-child(even) .cd-timeline-content.red::before{
-		border-right-color: #c03b44;
-	}
-	.cd-timeline-block:nth-child(even) .cd-timeline-content {
-		float: right;
-	}
-	.cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
-		left: auto;
-		right: 122%;
-		text-align: right;
-	}
 }
 
 
