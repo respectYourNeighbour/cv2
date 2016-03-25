@@ -5,7 +5,7 @@
 (function() {
     'use strict';
 
-    function portofolioCtrl($scope, $translate, AuthenticationService, $location, $window, AclService) {
+    function portofolioCtrl($scope, $translate, AuthenticationService, $location, $window) {
         console.log('Portofolio Controller');
 
         //google analytics
@@ -16,6 +16,6 @@
 
     angular
         .module('sampleApp')
-        .controller('PortofolioController',  ['$scope', '$translate', 'AuthenticationService', '$location', '$window', 'AclService', portofolioCtrl]);
+        .controller('PortofolioController',  ['$scope', '$translate', 'AuthenticationService', '$location', '$window', portofolioCtrl]);
 
 }());
