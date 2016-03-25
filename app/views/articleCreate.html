@@ -1,20 +1,21 @@
 <div class="container">
 	<section>
-	    <div>
-	        <h1 translate="EDITOR">Editor</h1>
+	    <div class="whiteWrapper">
+	        <h1>Create Article</h1>
 	        <form name="form" role="form" ng-submit="save()" novalidate>
 				<div class="form-group">
-			    	<label for="articleTitle">Article Title</label>
+			    	<label for="articleTitle">Title</label>
 			    	<input type="text" class="form-control" id="articleTitle" placeholder="Article title" ng-model="articleTitle">
 				</div>
 				<div class="form-group">
-			    	<label for="articleCategory">Article Category</label>
+			    	<label for="articleCategory">Category</label>
 			    	<input type="text" class="form-control" id="articleCategory" placeholder="Article Category" ng-model="articleCategory">
 				</div>
 				<div class="form-group">
-					<label for="selectArticleIcons">Mutiple select list (hold shift to select more than one):</label>
+					<label for="selectArticleIcons">Icons</label>
 						<select multiple class="form-control" id="selectArticleIcons" ng-model="selectArticleIcons">
 							<option value="node">node</option>
+							<option value="css">css</option>
 							<option value="smart">smart</option>
 							<option value="writting">writting</option>
 					</select>
@@ -23,13 +24,14 @@
 			    	<label for="articleAuthor">Article Author</label>
 			    	<input type="text" class="form-control" id="articleAuthor" placeholder="Article Author" ng-model="articleAuthor">
 				</div>
+				<div class="form-group">
+			    	<label for="articleCategory">Link to original post</label>
+			    	<input type="text" class="form-control" id="originalPost" placeholder="Original post" ng-model="originalPost">
+				</div>
 		        <text-angular name="htmlcontent" ng-model="htmlcontenttwo">
 		            <p>Type <b>here</b></p>
 		        </text-angular>
-				<div class="form-group">
-			    	<label for="articleCategory">Original post</label>
-			    	<input type="text" class="form-control" id="originalPost" placeholder="Original post" ng-model="originalPost">
-				</div>
+				<br>
 		        <button class="btn btn-primary">Save</button>
 			</form>
 	    </div>

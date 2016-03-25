@@ -6,6 +6,12 @@
     padding-right: 0px;
 }
 
+.originalPost{
+    a:hover{
+        color: #6CB5AC;
+    }
+}
+
  .whiteWrapper{
     background-color: #fff;
     padding: 20px 20px 50px 20px;
@@ -100,6 +106,13 @@
     background-color: #fff;
     .node{
         background-image: url(../images/nodeLogo.png);
+        display: inline-block;
+        margin-top: 5px;
+        width: 40px;
+        height: 40px;
+    }
+    .css{
+        background-image: url(../images/css.png);
         display: inline-block;
         margin-top: 5px;
         width: 40px;

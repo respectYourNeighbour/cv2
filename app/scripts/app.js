@@ -303,7 +303,7 @@ angular
 			admin: ['can_about_me', 'can_article_list', 'can_article_detail', 'can_article_create', 'can_portofolio', 'can_contact', 'can_messages', 'can_login', 'can_signup', 'can_profile']
 		};
 		AclService.setAbilities(aclData);
-		AclService.attachRole('guest');
+		AclService.attachRole('admin');
 
 		//If the route change failed due to our "Unauthorized" error, redirect them
 		$rootScope.$on('$routeChangeError', function(current, previous, rejection){
