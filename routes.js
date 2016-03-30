@@ -268,7 +268,7 @@ module.exports = function(app, db) {
 	app.post('/api/updateArticle', function(req, res) {
 		console.log("Update Article req.body: ", req.body.id)
 
-		articles.update({_id: new mongodb.ObjectID(req.body.id)}, {$set:{body: req.body.body, title: req.body.title, category: req.body.category, author: req.body.author}}, function(error, articleUpdated){
+		articles.update({_id: new mongodb.ObjectID(req.body.id)}, {$set:{body: req.body.body, title: req.body.title, category: req.body.category, originalPost: req.body.originalPost, author: req.body.author, articleIcons: req.body.articleIcons, date: req.body.date}}, function(error, articleUpdated){
 			if(error){
 				console.log(error.message)
 				return db.close();

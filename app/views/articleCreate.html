@@ -16,6 +16,9 @@
 						<select multiple class="form-control" id="selectArticleIcons" ng-model="selectArticleIcons">
 							<option value="node">node</option>
 							<option value="css">css</option>
+							<option value="html">html</option>
+							<option value="javascript">javascript</option>
+							<option value="jquery">jquery</option>
 							<option value="smart">smart</option>
 							<option value="writting">writting</option>
 					</select>
@@ -27,6 +30,10 @@
 				<div class="form-group">
 			    	<label for="articleCategory">Link to original post</label>
 			    	<input type="text" class="form-control" id="originalPost" placeholder="Original post" ng-model="originalPost">
+				</div>
+				<div class="form-group">
+			    	<label for="date">Date</label>
+			    	<input type="text" class="form-control" id="date" placeholder="Date" ng-model="date">
 				</div>
 		        <text-angular name="htmlcontent" ng-model="htmlcontenttwo">
 		            <p>Type <b>here</b></p>

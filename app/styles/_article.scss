@@ -1,9 +1,64 @@
- /* --------------------------------
- 	ARTICLE
- -------------------------------- */
+/* --------------------------------
+ARTICLE
+-------------------------------- */
+@import "compass/css3";
+
 .container.articleDetail{
     padding-left: 0px;
     padding-right: 0px;
+}
+
+.articleList{
+    .date{
+        position: absolute;
+        right: 0;
+        background-color: rgba(255,255,255, .2);
+        margin-right: 15px;
+        margin-top: -30px;
+        color: #f96251;
+        padding: 5px;
+    }
+}
+
+$iconColor: #fff;
+$color: #999;
+.search {
+    width: 100%;
+    position: relative;
+    &:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-family: 'FontAwesome';
+        content: '\f002';
+        background: $color;
+        text-align: center;
+        color: $iconColor;
+        border-radius: 5px;
+        -webkit-font-smoothing: subpixel-antialiased;
+        font-smooth: always;
+    }
+}
+.searchTerm {
+    @include box-sizing(border-box);
+    width: 100%;
+    border: 5px solid $color;
+    padding: 5px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+}
+.searchButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    cursor: pointer;
 }
 
 .originalPost{
@@ -12,7 +67,7 @@
     }
 }
 
- .whiteWrapper{
+.whiteWrapper{
     background-color: #fff;
     padding: 20px 20px 50px 20px;
     box-shadow: 10px 0px 15px -5px rgba(0, 0, 0, 0.15), -10px 0px 15px -5px rgba(0, 0, 0, 0.15);
@@ -47,42 +102,42 @@
 }
 
 .view {
-	position: relative;
-	/*width: 400px;*/
-	height: 200px;
-	overflow: hidden;
+    position: relative;
+    /*width: 400px;*/
+    height: 200px;
+    overflow: hidden;
 
-	.inner {
-		width: 100%;
-		height: 200%;
-		-moz-transition: margin-top 0.7s;
-		-o-transition: margin-top 0.7s;
-		-webkit-transition: margin-top 0.7s;
-		transition: margin-top 0.7s;
-		overflow: hidden;
-	 }
-	.panel {
+    .inner {
+        width: 100%;
+        height: 200%;
+        -moz-transition: margin-top 0.7s;
+        -o-transition: margin-top 0.7s;
+        -webkit-transition: margin-top 0.7s;
+        transition: margin-top 0.7s;
+        overflow: hidden;
+    }
+    .panel {
         font-family: font4;
-		box-sizing: border-box;
-		width: 100%;
-		height: 50%;
-		float: left;
-		background: $color-pink8;
-		color: #fff;
-		padding: 40px;
-		/*font: 40px Satisfy;*/
+        box-sizing: border-box;
+        width: 100%;
+        height: 50%;
+        float: left;
+        background: $color-pink8;
+        color: #fff;
+        padding: 40px;
+        /*font: 40px Satisfy;*/
         font-size: 1.8em;
-		text-align: center;
-		margin: 0px;
-		border-radius: 0px;
-		display: flex;
-		justify-content: center; /* align horizontal */
-		align-items: center; /* align vertical */
-	}
-	.panel:nth-child(2) {
-		background: $color-pink8;
-		color: #fff;
-	}
+        text-align: center;
+        margin: 0px;
+        border-radius: 0px;
+        display: flex;
+        justify-content: center; /* align horizontal */
+        align-items: center; /* align vertical */
+    }
+    .panel:nth-child(2) {
+        background: $color-pink8;
+        color: #fff;
+    }
 }
 .view:hover .inner {
     margin-top: -200px;
@@ -104,6 +159,7 @@
 .articleFooter{
     height: 50px;
     background-color: #fff;
+    padding-left: 10px;
     .node{
         background-image: url(../images/nodeLogo.png);
         display: inline-block;
@@ -118,8 +174,29 @@
         width: 40px;
         height: 40px;
     }
+    .javascript{
+        background-image: url(../images/javascript.png);
+        display: inline-block;
+        margin-top: 5px;
+        width: 40px;
+        height: 40px;
+    }
+    .jquery{
+        background-image: url(../images/jquery.png);
+        display: inline-block;
+        margin-top: 15px;
+        width: 102px;
+        height: 25px;
+    }
     .smart{
         background-image: url(../images/smart.png);
+        display: inline-block;
+        margin-top: 5px;
+        width: 40px;
+        height: 40px;
+    }
+    .html{
+        background-image: url(../images/html.png);
         display: inline-block;
         margin-top: 5px;
         width: 40px;
@@ -144,39 +221,39 @@
 }
 
 .itemWrapper{
-	/*width: 400px;*/
-	margin: 0 auto;
-	margin-bottom: 25px;
-	box-shadow:
-	 10px 0px 15px -5px rgba(0, 0, 0, 0.15),
-	-10px 0px 15px -5px rgba(0, 0, 0, 0.15);
+    /*width: 400px;*/
+    margin: 0 auto;
+    margin-bottom: 25px;
+    box-shadow:
+    10px 0px 15px -5px rgba(0, 0, 0, 0.15),
+    -10px 0px 15px -5px rgba(0, 0, 0, 0.15);
 }
 
 .itemHead  {
-	position: relative;
-	padding: 20px;
-	background: #fff;
-	font-size: 14px;
-	color: #999;
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    font-size: 14px;
+    color: #999;
 }
 
 .itemHead:before  {
-	content: "";
-	position: absolute;
-	z-index: 1;
-	top: 100%;
-	right: 10%;
-	border-top: 15px solid #fff;
-	border-left: 15px solid transparent;
-	border-right: 15px solid transparent;
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    right: 10%;
+    border-top: 15px solid #fff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
 }
 .itemHead:after  {
-	content: attr(data-category);
-	position: absolute;
-	right: 20px;
-	text-align: right;
-	font-style: italic;
-	text-transform: uppercase;
+    content: attr(data-category);
+    position: absolute;
+    right: 20px;
+    text-align: right;
+    font-style: italic;
+    text-transform: uppercase;
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -188,13 +265,13 @@
     .whiteWrapper{
         padding: 40px 40px 50px 40px;
         p, ol, ul {
-           font-size: 1.7em;
+            font-size: 1.7em;
         }
         h1, h2{
             margin-bottom: 40px;
         }
-   }
-   .articleHeader{
+    }
+    .articleHeader{
         padding: 40px 80px 40px 80px;
     }
     .articleFootNotes{
@@ -202,12 +279,12 @@
     }
     .view {
         height: 300px;
-    	.inner {
+        .inner {
 
-    	 }
-    	.panel {
+        }
+        .panel {
             font-size: 2.2em;
-    	}
+        }
     }
     .view:hover .inner {
         margin-top: -300px;

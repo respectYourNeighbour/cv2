@@ -26,6 +26,7 @@
             }
 
             function updateArticle(article) {
+                console.log('article', article);
                 return $http.post('/api/updateArticle', article);
             }
 

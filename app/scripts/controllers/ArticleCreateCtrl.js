@@ -15,7 +15,8 @@
                 'category': $scope.articleCategory,
                 'author': $scope.articleAuthor,
                 'articleIcons': $scope.selectArticleIcons,
-                'originalPost': $scope.originalPost
+                'originalPost': $scope.originalPost,
+                'date': $scope.date
             };
 
 	        ArticlesService.createArticle($scope.text).success(function(data) {

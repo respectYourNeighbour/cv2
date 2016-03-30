@@ -1,6 +1,12 @@
 <div class="container articleList">
 	<div class="row">
-		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" ng-repeat="article in articles">
+		<form class="search">
+  			<input class="searchTerm" placeholder="Enter your search term ..." ng-model="searchArticle" /><span class="searchButton"> </span>
+		</form>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" ng-repeat="article in articles | filter:searchArticle">
 			<div class="itemWrapper">
 			<a ui-sref="viewArticleDetail({ articleId: article._id })">
 				<div class="itemHead" data-category="{{article.category}}">{{article.author}}</div>
@@ -11,12 +17,12 @@
 					</div>
 				</div>
 			</a>
+			<div class="date">{{article.date}}</div>
 			<div class="articleFooter">
 				<span ng-repeat="icon in article.articleIcons">
 					<span class="{{icon}}"></span>
 				</span>
 			</div>
-
 		</div>
 	</div>
 </div>
