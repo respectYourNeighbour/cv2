@@ -75,6 +75,9 @@ $color: #999;
         font-family: font9;
         margin-bottom: 30px;
     }
+    h3{
+        font-family: font8;
+    }
     p, ol, ul {
         font-family: 'Crimson Text', 'Times New Roman', 'Times', serif;
         font-family: questa_granderegular;
@@ -211,6 +214,20 @@ $color: #999;
     }
     .docker{
         background-image: url(../images/docker.png);
+        display: inline-block;
+        margin-top: 5px;
+        width: 40px;
+        height: 40px;
+    }
+    .linux{
+        background-image: url(../images/linux.png);
+        display: inline-block;
+        margin-top: 5px;
+        width: 40px;
+        height: 40px;
+    }
+    .virtualbox{
+        background-image: url(../images/virtualbox.png);
         display: inline-block;
         margin-top: 5px;
         width: 40px;
