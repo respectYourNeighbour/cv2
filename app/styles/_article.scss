@@ -201,6 +201,13 @@ $color: #999;
         width: 40px;
         height: 40px;
     }
+    .json{
+        background-image: url(../images/json.png);
+        display: inline-block;
+        margin-top: 5px;
+        width: 119px;
+        height: 40px;
+    }
     .jquery{
         background-image: url(../images/jquery.png);
         display: inline-block;
@@ -220,6 +227,27 @@ $color: #999;
         display: inline-block;
         margin-top: 5px;
         width: 40px;
+        height: 40px;
+    }
+    .maven{
+        background-image: url(../images/maven.png);
+        display: inline-block;
+        margin-top: 10px;
+        width: 119px;
+        height: 30px;
+    }
+    .gradle{
+        background-image: url(../images/gradle.png);
+        display: inline-block;
+        margin-top: 10px;
+        width: 107px;
+        height: 30px;
+    }
+    .spring{
+        background-image: url(../images/spring.png);
+        display: inline-block;
+        margin-top: 5px;
+        width: 127px;
         height: 40px;
     }
     .linux{
