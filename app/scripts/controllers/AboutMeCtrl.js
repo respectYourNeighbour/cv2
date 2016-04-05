@@ -1,7 +1,7 @@
 /****************************
  ***** Menu1 Controller *****
  ****************************/
- 
+
 (function() {
     'use strict';
 
@@ -11,7 +11,7 @@
         // GET =====================================================================
         // when landing on the page, get all todos and show them
         // use the service to get all the entries
-        $scope.myPromise = HomeService.get()
+        $scope.aboutMePromise = HomeService.get()
             .success(function() {
                 console.dir();
         });

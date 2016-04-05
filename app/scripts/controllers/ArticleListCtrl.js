@@ -8,7 +8,7 @@
     function articleCtrl($scope, $stateParams, ArticlesService) {
         console.log('Articles List Controller');
 
-        ArticlesService.getAllArticles().success(function(data){
+        $scope.allArticlesPromise = ArticlesService.getAllArticles().success(function(data){
         	console.log('articles found', data);
         	$scope.articles = data;
         });

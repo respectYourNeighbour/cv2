@@ -1,11 +1,8 @@
 <section class="container aboutMe whiteWrapper">
-    <div>
-		<!-- (angular-busy): div that shows when loading the data -->
-        <div cg-busy="myPromise"></div>
-    </div>
+
     <div class="row">
 	    <div class="col-md-10">
-	    	<div class="col-md-12 col-md-offset-1">
+	    	<div class="col-md-12 col-md-offset-1" cg-busy="aboutMePromise">
 	    		<h2 class="aboutMeTitle" translate="ABOUT_ME_TITLE">
 	    			A few words about me
 	    		</h2>
