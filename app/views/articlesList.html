@@ -1,28 +1,42 @@
 <div class="container articleList">
 	<div class="row">
 		<form class="search">
-  			<input class="searchTerm" placeholder="Enter your search term ..." ng-model="searchArticle" /><span class="searchButton"> </span>
+			<input class="searchTerm" placeholder="Enter your search term ..." ng-model="searchArticle" /><span class="searchButton"> </span>
 		</form>
 	</div>
 	<br>
-	<div class="row" cg-busy="allArticlesPromise">
+	<div class="row" cg-busy="pagedItems">
 		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" ng-repeat="article in articles | filter:searchArticle | orderBy: 'title'">
 			<div class="itemWrapper">
-			<a ui-sref="viewArticleDetail({ articleId: article._id })">
-				<div class="itemHead" data-category="{{article.category}}">{{article.author}}</div>
-				<div class="view">
-					<div class="inner">
-						<div class="panel noselect">{{article.title}}</div>
-						<div class="panel noselect">read more...</div>
+				<a ui-sref="viewArticleDetail({ articleId: article._id })">
+					<div class="itemHead" data-category="{{article.category}}">{{article.author}}</div>
+					<div class="view">
+						<div class="inner">
+							<div class="panel noselect">{{article.title}}</div>
+							<div class="panel noselect">read more...</div>
+						</div>
 					</div>
+				</a>
+				<div class="date">{{article.date}}</div>
+				<div class="articleFooter">
+					<span ng-repeat="icon in article.articleIcons">
+						<span class="{{icon}}"></span>
+					</span>
 				</div>
-			</a>
-			<div class="date">{{article.date}}</div>
-			<div class="articleFooter">
-				<span ng-repeat="icon in article.articleIcons">
-					<span class="{{icon}}"></span>
-				</span>
 			</div>
 		</div>
+	</div>
+	<div>
+		<ul class="pagination">
+			<li ng-class="prevPageDisabled()">
+				<a href ng-click="prevPage()">« Prev</a>
+			</li>
+			<li ng-repeat="n in range()" ng-class="{active: n == currentPage}" ng-click="setPage(n)">
+				<a href="#">{{n+1}}</a>
+			</li>
+			<li ng-class="nextPageDisabled()">
+				<a href ng-click="nextPage()">Next »</a>
+			</li>
+		</ul>
 	</div>
 </div>

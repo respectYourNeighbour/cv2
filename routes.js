@@ -242,6 +242,31 @@ module.exports = function(app, db) {
 
 	/*
 	 |--------------------------------------------------------------------------
+	 | GET PAGINATED ARTICLES
+	 |--------------------------------------------------------------------------
+	 */
+	app.post('/api/getPaginatedArticles', function(req, res) {
+		console.log('routes get paginated articles', req.body);
+
+		articles.find().skip(req.body.offset).limit(req.body.limit).toArray(function(err, items) {
+			"use strict";
+
+			if (err) throw err;
+
+			console.log("Found " + items.length + " articles");
+			var articles = {
+				items: items,
+				nrItems: 41
+			}
+
+			res.json(articles);
+
+		});
+	});
+
+
+	/*
+	 |--------------------------------------------------------------------------
 	 | GET ARTICLE BY ID
 	 |--------------------------------------------------------------------------
 	 */
