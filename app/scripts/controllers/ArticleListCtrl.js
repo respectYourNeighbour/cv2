@@ -55,7 +55,10 @@
                 $scope.currentPage = n;
             }
         };
-        
+
+        $scope.filter = function() {
+            console.log('changed');
+        };
 
         $scope.$watch('currentPage', function(newValue) {
             $scope.pagedItems = ArticlesService.getPaginatedArticles(newValue*$scope.itemsPerPage, $scope.itemsPerPage).success(function(data){

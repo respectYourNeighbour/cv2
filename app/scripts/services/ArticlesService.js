@@ -28,6 +28,10 @@
             return $http.post('/api/getPaginatedArticles', limit);
         }
 
+        function searchArticleTitle() {
+            return $http.get('/api/searchArticleTitle');
+        }
+
         function getArticleById(articleId) {
             articleId = {articleId: articleId};
             return $http.put('/api/getArticleById', articleId).success(function(){
@@ -51,7 +55,8 @@
             getArticleById: getArticleById,
             updateArticle: updateArticle,
             deleteArticle: deleteArticle,
-            getPaginatedArticles: getPaginatedArticles
+            getPaginatedArticles: getPaginatedArticles,
+            searchArticleTitle: searchArticleTitle
         };
 
     }]);
