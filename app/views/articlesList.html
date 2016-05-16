@@ -5,7 +5,7 @@
 		</form>
 	</div>
 	<br>
-	<div class="row" cg-busy="pagedItems">
+	<div class="row" cg-busy="allArticlesPromise">
 		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" ng-repeat="article in articles | filter:searchArticle | orderBy: 'title'">
 			<div class="itemWrapper">
 				<a ui-sref="viewArticleDetail({ articleId: article._id })">
@@ -26,7 +26,7 @@
 			</div>
 		</div>
 	</div>
-	<div>
+	<!-- <div>
 		<ul class="pagination">
 			<li ng-class="prevPageDisabled()">
 				<a href ng-click="prevPage()">« Prev</a>
@@ -38,5 +38,5 @@
 				<a href ng-click="nextPage()">Next »</a>
 			</li>
 		</ul>
-	</div>
+	</div> -->
 </div>

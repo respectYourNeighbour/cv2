@@ -83,7 +83,7 @@
                     <li ng-show="can('can_contact')">
                         <a ui-sref="menu5" translate="CONTACT"></a>
                     </li>
-                    <li ng-if="isAuthenticated() && can('can_messages')">
+                    <li ng-if="isAuthenticated()">
                         <a ui-sref="messages.list">Messages</a>
                     </li>
                     <li ng-if="!isAuthenticated() && can('can_login')">
@@ -95,7 +95,7 @@
                     <li ng-if="isAuthenticated()">
                         <a ui-sref="logout">Logout</a>
                     </li>
-                    <li ng-if="isAuthenticated() && can('can_profile')">
+                    <li ng-if="isAuthenticated()">
                         <a ui-sref="profile">Profile</a>
                     </li>
                 </ul>
@@ -183,6 +183,12 @@
 
 
     <!--****************************
+    ******* ANGULAR APP ************
+    ******************************** -->
+    <!--                            -->         <script src="scripts/app.js"></script>
+
+
+    <!--****************************
     ******** ANGULAR SERVICES ******
     ******************************** -->
     <!--  Home Service              -->         <script src="scripts/services/HomeService.js"></script>
@@ -198,10 +204,7 @@
     <!--                            -->         <script src="scripts/directives/firstLoad.js"></script>
 
 
-    <!--****************************
-    ******* ANGULAR APP ************
-    ******************************** -->
-    <!--                            -->         <script src="scripts/app.js"></script>
+
 
 
     <!--****************************

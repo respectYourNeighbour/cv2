@@ -60,19 +60,19 @@
             console.log('changed');
         };
 
-        $scope.$watch('currentPage', function(newValue) {
+        /*$scope.$watch('currentPage', function(newValue) {
             $scope.pagedItems = ArticlesService.getPaginatedArticles(newValue*$scope.itemsPerPage, $scope.itemsPerPage).success(function(data){
                 //console.log('recieved paginated data: ', data);
                 $scope.articles = data.items;
                 $scope.total =  data.nrItems;
             });
+        });*/
+
+
+        $scope.allArticlesPromise = ArticlesService.getAllArticles().success(function(data){
+            console.log('articles found', data);
+            $scope.articles = data;
         });
-
-
-        /*$scope.allArticlesPromise = ArticlesService.getAllArticles().success(function(data){
-        console.log('articles found', data);
-        //$scope.articles = data;
-    });*/
 }
 
 angular
