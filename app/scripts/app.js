@@ -299,7 +299,7 @@ angular
 	.run(['AclService', '$rootScope', '$location', function(AclService, $rootScope, $location) {
 		var aclData = {
 			guest: ['can_about_me', 'can_article_list', 'can_article_detail', 'can_portofolio'],
-			online: ['can_about_me', 'can_article_list', 'can_article_detail', 'can_login'],
+			online: ['can_about_me', 'can_article_list', 'can_article_create', 'can_article_detail', 'can_login'],
 			member: ['can_about_me', 'can_article_list', 'can_article_detail', 'can_portofolio', 'can_contact', 'can_messages', 'can_login', 'can_signup', 'can_profile'],
 			admin: ['can_about_me', 'can_article_list', 'can_article_detail', 'can_article_create', 'can_portofolio', 'can_contact', 'can_messages', 'can_login', 'can_signup', 'can_profile']
 		};
